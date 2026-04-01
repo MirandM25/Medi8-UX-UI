@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Medi8 Pulse | Elena Thorne - Client Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#dabce6",
+              "surface-container-high": "#e6e9e8",
+              "outline-variant": "#d1c2d2",
+              "surface-container": "#ebeeed",
+              "primary-fixed": "#f8d8ff",
+              "surface-dim": "#d7dbda",
+              "inverse-on-surface": "#eef1f0",
+              "primary-container": "#8e44ad",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-background": "#181c1c",
+              "on-surface": "#181c1c",
+              "on-secondary-fixed-variant": "#553e61",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2d3131",
+              "on-tertiary-container": "#474000",
+              "primary-fixed-dim": "#ecb2ff",
+              "on-secondary-container": "#71587c",
+              "on-tertiary-fixed-variant": "#4f4800",
+              "on-secondary-fixed": "#271333",
+              "on-surface-variant": "#4e4350",
+              "surface-container-highest": "#e0e3e2",
+              "secondary-container": "#f2d2fe",
+              "surface-tint": "#873da6",
+              "on-primary-fixed-variant": "#6c228c",
+              "on-primary-fixed": "#320047",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#f2e57b",
+              "surface-bright": "#f7faf9",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#f5d9ff",
+              "on-tertiary-fixed": "#1f1c00",
+              "surface": "#f7faf9",
+              "surface-variant": "#e0e3e2",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#807381",
+              "inverse-primary": "#ecb2ff",
+              "on-primary-container": "#f8d8ff",
+              "primary": "#732993",
+              "surface-container-low": "#f1f4f3",
+              "tertiary-fixed-dim": "#d5c962",
+              "secondary": "#6e557a",
+              "on-error": "#ffffff",
+              "background": "#f7faf9",
+              "tertiary-container": "#b9ad4a",
+              "tertiary": "#695f00",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-slate-50 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 overflow-y-auto flex flex-col py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<span class="text-lg font-black tracking-tight text-purple-700 dark:text-purple-400">Medi8 Pulse</span>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="index.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium Inter">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-purple-700 dark:text-purple-300 font-bold border-r-4 border-purple-600 dark:border-purple-400 bg-purple-50 dark:bg-purple-900/20 transition-all opacity-90" href="clients.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-medium Inter">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="alerts.html">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="text-sm font-medium Inter">Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="trends.html">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-sm font-medium Inter">Trends</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="map-analytics.html">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-sm font-medium Inter">Map Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="reports.html">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-sm font-medium Inter">Reports</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-2.5 px-4 rounded-md font-bold text-sm mb-6 shadow-sm">
+                New Consultation
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-sm font-medium Inter">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-sm font-medium Inter">Logout</span>
+</a>
+</div>
+<div class="mt-6 flex items-center gap-3 px-2">
+<img alt="Dr. Aris Thorne" class="w-8 h-8 rounded-full bg-purple-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkwOV9QEHO_XnqVhjpaiD3pG-4-tYptZM5W6SC_Qs1FSqFWnyShraCSkP_t2rHvnDBC4Q2thoE5CGrPJ62kwDNazj-ZkPGyFbfw5TH99c0J6yG-sFp3PkJdNbTHM8j0fwFWKi1NJ6i6giM5cWV4nHrJoR0dSppVD9BNDiSbVq6ihf8eTR8FcpYxT1N46On-oixuZnPVRR7C0O94t5uhb26yIzppToJ8pcrpsX8SvuITTk3G4gNQWoRbL6yN3s5mUiDHIs08adFWYk"/>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Dr. Aris Thorne</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Chief Advisor</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-8">
+<div class="flex items-center flex-grow max-w-xl">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-purple-500/20 rounded-lg">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm Inter focus:ring-0" placeholder="Search client records, symptoms, or clinical notes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity">
+<span class="material-symbols-outlined" data-icon="health_metrics">health_metrics</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800"></div>
+<img alt="Dr. Aris Thorne" class="w-8 h-8 rounded-full border border-purple-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA5a5_s_uQA6RyDHkeENXWWAczxae6qdqmyrDMkPQp0zjfAA1B0524D9RP71lHZnS-TRat0gfeMmw8the4CUviAUyuiIngrQp4pZuje0NfyM6Xv_lmWAgxfTIOjXzpvxHA8LzUxkmRYB-RM0UzW0_o1lnsccRxtbDiu88giM-yS5OXXbAxcpvcP36lUInZ18BDNCzL8ZcCAZLjCB8nb4Np3y4gYTfNNAulLO-m_ZegUBYRZHPo5FoVhaoHCyq0ot8kdL7XA3twMUU"/>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-16 min-h-screen p-8">
+<!-- Profile Header -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-10">
+<div class="flex gap-6 items-center">
+<div class="relative">
+<img alt="Elena Thorne" class="w-24 h-24 rounded-xl object-cover ring-4 ring-white shadow-md" data-alt="portrait of an elderly woman with silver hair and warm eyes wearing a soft lavender sweater, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSy7cdXft7GubZ5fqbdm4aB1zDVgOWlwIzEIknKRrCdKTmZlhQMo1XcbftkMYkJq5smkyuNz1cu7vZBSy3nIS-PSCq_P_IVBbenlE4efYN28ArVYKRemmGXbXxRwbKTHd-cZVZ-9DvXKubT-EVPwavgm6ZvniwOGi_FQtCdEd2Vbmme5vwtOpr6ZswlCHci2ZxgcLW952jHO3bjx4RusK1LI0lZv42ahFuOkWxCYbWeavuqbMMGhcsocNShL8mr34A2qwld68qOwY"/>
+<span class="absolute -bottom-2 -right-2 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-full border-2 border-white">SMARTCARE</span>
+</div>
+<div>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight text-on-surface">Elena Thorne</h2>
+<p class="text-sm font-medium text-on-surface-variant flex items-center gap-2 mt-1">
+                        ID: #CL-88294 &bull; 74 Years &bull; <span class="flex items-center gap-1 text-tertiary font-semibold"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Pending Review</span>
+</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface-container-high text-primary px-4 py-2.5 rounded-md text-sm font-semibold hover:opacity-80 transition-opacity">
+                    Full Clinical Record
+                </button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-md text-sm font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">description</span>
+                    Generate Report
+                </button>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Central Social Health Trend -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl relative overflow-hidden">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+<div>
+<h3 class="text-xl font-bold font-headline">Social Health Trend</h3>
+<p class="text-sm text-on-surface-variant">Active engagement metrics over the last 30 days</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-low rounded-full text-xs font-semibold text-primary">Monthly</span>
+<span class="px-3 py-1 text-xs font-semibold text-on-surface-variant cursor-pointer hover:text-primary transition-colors">Weekly</span>
+</div>
+</div>
+<!-- Legend -->
+<div class="flex flex-wrap gap-x-5 gap-y-2 mb-6">
+<div class="flex items-center gap-2">
+<span class="w-3 h-[3px] rounded-full bg-[#732993]"></span>
+<span class="text-[11px] font-medium text-on-surface-variant">Social</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-[3px] rounded-full bg-[#0ea5e9]"></span>
+<span class="text-[11px] font-medium text-on-surface-variant">Cognitive</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-[3px] rounded-full bg-[#f59e0b]"></span>
+<span class="text-[11px] font-medium text-on-surface-variant">Physical</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-[3px] rounded-full bg-[#ef4444]"></span>
+<span class="text-[11px] font-medium text-on-surface-variant">Emotional</span>
+</div>
+</div>
+<!-- Chart Area -->
+<div class="h-64 w-full relative">
+<!-- Y Axis -->
+<div class="absolute left-0 top-0 h-full flex flex-col justify-between text-[10px] text-on-surface-variant font-medium pr-2">
+<span>100%</span>
+<span>75%</span>
+<span>50%</span>
+<span>25%</span>
+<span>0%</span>
+</div>
+<!-- Graph Canvas -->
+<div class="ml-10 h-full w-[calc(100%-2.5rem)] relative">
+<!-- Horizontal Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+<div class="border-t border-outline-variant/15 w-full h-0"></div>
+<div class="border-t border-outline-variant/15 w-full h-0"></div>
+<div class="border-t border-outline-variant/15 w-full h-0"></div>
+<div class="border-t border-outline-variant/15 w-full h-0"></div>
+<div class="border-t border-outline-variant/25 w-full h-0"></div>
+</div>
+<!-- Multi-line Trend Chart -->
+<svg class="absolute inset-0 h-full w-full" preserveAspectRatio="none" viewBox="0 0 300 100">
+<!-- Emotional (red) - lower, gentle wave -->
+<polyline points="0,78 30,74 60,70 90,72 120,65 150,68 180,60 210,55 240,52 270,48 300,45" fill="none" stroke="#ef4444" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.7"></polyline>
+<!-- Physical (amber) - mid-range with peaks -->
+<polyline points="0,72 30,68 60,55 90,60 120,48 150,52 180,42 210,38 240,35 270,30 300,28" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.7"></polyline>
+<!-- Cognitive (cyan) - higher, oscillating -->
+<polyline points="0,65 30,58 60,50 90,42 120,45 150,35 180,30 210,28 240,25 270,22 300,20" fill="none" stroke="#0ea5e9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" opacity="0.7"></polyline>
+<!-- Social (purple) - primary line, prominent -->
+<polyline points="0,82 30,76 60,65 90,55 120,50 150,42 180,35 210,30 240,24 270,20 300,15" fill="none" stroke="#732993" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- Data point circles - Social (purple) -->
+<circle cx="0" cy="82" r="3" fill="#fff" stroke="#732993" stroke-width="1.5"></circle>
+<circle cx="60" cy="65" r="3" fill="#fff" stroke="#732993" stroke-width="1.5"></circle>
+<circle cx="120" cy="50" r="3" fill="#fff" stroke="#732993" stroke-width="1.5"></circle>
+<circle cx="180" cy="35" r="3" fill="#fff" stroke="#732993" stroke-width="1.5"></circle>
+<circle cx="240" cy="24" r="3" fill="#fff" stroke="#732993" stroke-width="1.5"></circle>
+<circle cx="300" cy="15" r="3" fill="#fff" stroke="#732993" stroke-width="1.5"></circle>
+<!-- Data point circles - Cognitive (cyan) -->
+<circle cx="60" cy="50" r="2.5" fill="#fff" stroke="#0ea5e9" stroke-width="1.5"></circle>
+<circle cx="150" cy="35" r="2.5" fill="#fff" stroke="#0ea5e9" stroke-width="1.5"></circle>
+<circle cx="240" cy="25" r="2.5" fill="#fff" stroke="#0ea5e9" stroke-width="1.5"></circle>
+<!-- Data point circles - Physical (amber) -->
+<circle cx="60" cy="55" r="2.5" fill="#fff" stroke="#f59e0b" stroke-width="1.5"></circle>
+<circle cx="150" cy="52" r="2.5" fill="#fff" stroke="#f59e0b" stroke-width="1.5"></circle>
+<circle cx="240" cy="35" r="2.5" fill="#fff" stroke="#f59e0b" stroke-width="1.5"></circle>
+<!-- Data point circles - Emotional (red) -->
+<circle cx="60" cy="70" r="2.5" fill="#fff" stroke="#ef4444" stroke-width="1.5"></circle>
+<circle cx="150" cy="68" r="2.5" fill="#fff" stroke="#ef4444" stroke-width="1.5"></circle>
+<circle cx="240" cy="52" r="2.5" fill="#fff" stroke="#ef4444" stroke-width="1.5"></circle>
+<!-- Tooltip callout on highlighted data point -->
+<rect x="164" y="16" width="40" height="16" rx="3" fill="#732993"></rect>
+<text x="184" y="27" text-anchor="middle" fill="#fff" font-size="7" font-family="Inter, sans-serif" font-weight="600">84.2%</text>
+<line x1="184" y1="32" x2="180" y2="35" stroke="#732993" stroke-width="1"></line>
+</svg>
+<!-- X Axis Labels -->
+<div class="absolute -bottom-5 left-0 w-full flex justify-between text-[10px] text-on-surface-variant font-medium">
+<span>Mar 1</span>
+<span>Mar 5</span>
+<span>Mar 10</span>
+<span>Mar 15</span>
+<span>Mar 20</span>
+<span>Mar 25</span>
+<span>Mar 30</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Engagement History -->
+<div class="bg-surface-container-lowest p-8 rounded-xl">
+<h3 class="text-xl font-bold font-headline mb-6">Engagement History</h3>
+<div class="space-y-6">
+<div class="flex gap-4 group cursor-pointer hover:bg-surface-container-low p-2 -m-2 rounded-lg transition-colors">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">park</span>
+</div>
+<div class="w-px h-full bg-outline-variant/30 mt-2"></div>
+</div>
+<div class="pb-6">
+<h4 class="font-bold text-on-surface">Oasis Zen Garden</h4>
+<p class="text-xs text-on-surface-variant font-medium">Yesterday at 2:30 PM &bull; 45 min duration</p>
+<p class="text-sm text-on-surface-variant mt-2 max-w-lg">Elena spent significant time in the meditative zone. Biometric data suggests a 12% decrease in heart rate variability during the session.</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer hover:bg-surface-container-low p-2 -m-2 rounded-lg transition-colors">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<div class="w-px h-full bg-outline-variant/30 mt-2"></div>
+</div>
+<div class="pb-6">
+<h4 class="font-bold text-on-surface">The Willow Sanctuary</h4>
+<p class="text-xs text-on-surface-variant font-medium">Mon, Oct 14 &bull; 1 hr 15 min duration</p>
+<p class="text-sm text-on-surface-variant mt-2 max-w-lg">Social interaction detected with 2 known peers. Engagement scores were high (8.4/10).</p>
+</div>
+</div>
+<div class="flex gap-4 group cursor-pointer hover:bg-surface-container-low p-2 -m-2 rounded-lg transition-colors">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">local_library</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Metropolitan Library</h4>
+<p class="text-xs text-on-surface-variant font-medium">Sun, Oct 13 &bull; 2 hr duration</p>
+<p class="text-sm text-on-surface-variant mt-2 max-w-lg">Focused cognitive tasking observed. Recommend continued access to archival sections.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar Panel -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Risk Assessment Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_4px_20px_rgba(115,41,147,0.06)] border border-outline-variant/10">
+<h3 class="text-xl font-bold font-headline mb-6">Risk Assessment</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Isolation Risk</label>
+<span class="text-xs font-bold text-tertiary">Moderate</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary w-3/5 h-full rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="text-xs font-semibold text-on-surface-variant uppercase tracking-wider">Cognitive Load</label>
+<span class="text-xs font-bold text-primary">Optimal</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container w-1/4 h-full rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/10">
+<p class="text-xs text-on-surface-variant italic">"Current trajectory indicates a stable baseline, though isolation metrics spiked slightly after the library visit."</p>
+</div>
+</div>
+<!-- Intervention Tools -->
+<div class="space-y-4">
+<h3 class="text-xl font-bold font-headline">Intervention Tools</h3>
+<button class="w-full group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 text-left hover:bg-primary-container hover:text-on-primary transition-all">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-white/20 group-hover:text-white">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Nudge for Social Connection</p>
+<p class="text-xs opacity-70">Send automated invitation</p>
+</div>
+<span class="material-symbols-outlined text-sm opacity-40">chevron_right</span>
+</button>
+<button class="w-full group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 text-left hover:bg-primary-container hover:text-on-primary transition-all">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-white/20 group-hover:text-white">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Recommend Location</p>
+<p class="text-xs opacity-70">Curated based on interests</p>
+</div>
+<span class="material-symbols-outlined text-sm opacity-40">chevron_right</span>
+</button>
+<button class="w-full group bg-surface-container-lowest p-4 rounded-xl flex items-center gap-4 text-left hover:bg-primary-container hover:text-on-primary transition-all border-2 border-dashed border-primary/20">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-white/20 group-hover:text-white">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold">Assign Care Navigator</p>
+<p class="text-xs opacity-70">High-touch human support</p>
+</div>
+<span class="material-symbols-outlined text-sm opacity-40">chevron_right</span>
+</button>
+</div>
+<!-- Active Radius Map -->
+<div class="bg-surface-container-lowest p-4 rounded-xl">
+<div class="flex justify-between items-center mb-3">
+<h4 class="text-sm font-bold">Active Radius</h4>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Real-time</span>
+</div>
+<div class="aspect-square w-full rounded-lg bg-surface-container-high overflow-hidden relative">
+<img alt="Location map" class="w-full h-full object-cover grayscale opacity-60" data-alt="minimalist clean map of an urban park area with a single purple pulsing dot indicating location" data-location="London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiRPchZUghiRNfKgLFoS58SSr45ApvMa6U35IqccAchaBbyL9KL3rbEfgAHthX2zH0k1IKkwU_hy_AM5toS_JYYftLZ20lRWt2IOymH_oeogPfXQmOQ0PpiE0VMNerRgNPT5JCW9EZc2TmcmPeX_esQamBf_Gy475nb8oPbQw7tMAoH8tRMaZSbfTqKgoEJPwtf2zTotU30K41XkRYVNZXdKH87SMB-G37pSfWRs4WcCvX9IfvwA2-dHT4mc4nEJjChqtpaN4v2k8"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-32 h-32 rounded-full border-2 border-primary/30 bg-primary/5 animate-pulse"></div>
+<div class="w-4 h-4 rounded-full bg-primary border-2 border-white absolute"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

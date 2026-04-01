@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Medi8 Pulse | Risk Monitoring Panel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#dabce6",
+              "surface-container-high": "#e6e9e8",
+              "outline-variant": "#d1c2d2",
+              "surface-container": "#ebeeed",
+              "primary-fixed": "#f8d8ff",
+              "surface-dim": "#d7dbda",
+              "inverse-on-surface": "#eef1f0",
+              "primary-container": "#8e44ad",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-background": "#181c1c",
+              "on-surface": "#181c1c",
+              "on-secondary-fixed-variant": "#553e61",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2d3131",
+              "on-tertiary-container": "#474000",
+              "primary-fixed-dim": "#ecb2ff",
+              "on-secondary-container": "#71587c",
+              "on-tertiary-fixed-variant": "#4f4800",
+              "on-secondary-fixed": "#271333",
+              "on-surface-variant": "#4e4350",
+              "surface-container-highest": "#e0e3e2",
+              "secondary-container": "#f2d2fe",
+              "surface-tint": "#873da6",
+              "on-primary-fixed-variant": "#6c228c",
+              "on-primary-fixed": "#320047",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#f2e57b",
+              "surface-bright": "#f7faf9",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#f5d9ff",
+              "on-tertiary-fixed": "#1f1c00",
+              "surface": "#f7faf9",
+              "surface-variant": "#e0e3e2",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#807381",
+              "inverse-primary": "#ecb2ff",
+              "on-primary-container": "#f8d8ff",
+              "primary": "#732993",
+              "surface-container-low": "#f1f4f3",
+              "tertiary-fixed-dim": "#d5c962",
+              "secondary": "#6e557a",
+              "on-error": "#ffffff",
+              "background": "#f7faf9",
+              "tertiary-container": "#b9ad4a",
+              "tertiary": "#695f00",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-slate-50 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 overflow-y-auto flex flex-col py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<span class="text-lg font-black tracking-tight text-purple-700 dark:text-purple-400">Medi8 Pulse</span>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="index.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium Inter">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="clients.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-medium Inter">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-purple-700 dark:text-purple-300 font-bold border-r-4 border-purple-600 dark:border-purple-400 bg-purple-50 dark:bg-purple-900/20 transition-all opacity-90" href="alerts.html">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="text-sm font-medium Inter">Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="trends.html">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-sm font-medium Inter">Trends</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="map-analytics.html">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-sm font-medium Inter">Map Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="reports.html">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-sm font-medium Inter">Reports</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-2.5 px-4 rounded-md font-bold text-sm mb-6 shadow-sm">
+                New Consultation
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-sm font-medium Inter">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-sm font-medium Inter">Logout</span>
+</a>
+</div>
+<div class="mt-6 flex items-center gap-3 px-2">
+<img alt="Dr. Aris Thorne" class="w-8 h-8 rounded-full bg-purple-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkwOV9QEHO_XnqVhjpaiD3pG-4-tYptZM5W6SC_Qs1FSqFWnyShraCSkP_t2rHvnDBC4Q2thoE5CGrPJ62kwDNazj-ZkPGyFbfw5TH99c0J6yG-sFp3PkJdNbTHM8j0fwFWKi1NJ6i6giM5cWV4nHrJoR0dSppVD9BNDiSbVq6ihf8eTR8FcpYxT1N46On-oixuZnPVRR7C0O94t5uhb26yIzppToJ8pcrpsX8SvuITTk3G4gNQWoRbL6yN3s5mUiDHIs08adFWYk"/>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Dr. Aris Thorne</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Chief Advisor</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-8">
+<div class="flex items-center flex-grow max-w-xl">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-purple-500/20 rounded-lg">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm Inter focus:ring-0" placeholder="Search client records, symptoms, or clinical notes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity">
+<span class="material-symbols-outlined" data-icon="health_metrics">health_metrics</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800"></div>
+<img alt="Dr. Aris Thorne" class="w-8 h-8 rounded-full border border-purple-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA5a5_s_uQA6RyDHkeENXWWAczxae6qdqmyrDMkPQp0zjfAA1B0524D9RP71lHZnS-TRat0gfeMmw8the4CUviAUyuiIngrQp4pZuje0NfyM6Xv_lmWAgxfTIOjXzpvxHA8LzUxkmRYB-RM0UzW0_o1lnsccRxtbDiu88giM-yS5OXXbAxcpvcP36lUInZ18BDNCzL8ZcCAZLjCB8nb4Np3y4gYTfNNAulLO-m_ZegUBYRZHPo5FoVhaoHCyq0ot8kdL7XA3twMUU"/>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-16 min-h-screen bg-surface">
+<div class="max-w-7xl mx-auto p-8">
+<!-- Hero Header Section (Asymmetric Bento) -->
+<div class="grid grid-cols-12 gap-6 mb-8">
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-9xl text-primary" data-icon="monitoring">monitoring</span>
+</div>
+<h1 class="text-2xl font-bold font-headline mb-6">Risk Monitoring Panel</h1>
+<div class="flex flex-col">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h3 class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider mb-1">Peak Isolation Periods</h3>
+<p class="text-xs text-slate-400">Aggregated risk frequency by hour (Last 24h)</p>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-primary bg-primary-fixed px-2 py-1 rounded">LIVE DATA</span>
+</div>
+</div>
+<!-- Purple Bar Chart -->
+<div class="flex items-end justify-between h-32 gap-1 px-2">
+<div class="w-full bg-purple-100 h-[20%] rounded-t-sm" title="00:00"></div>
+<div class="w-full bg-purple-200 h-[30%] rounded-t-sm" title="02:00"></div>
+<div class="w-full bg-purple-300 h-[25%] rounded-t-sm" title="04:00"></div>
+<div class="w-full bg-purple-400 h-[45%] rounded-t-sm" title="06:00"></div>
+<div class="w-full bg-primary h-[85%] rounded-t-sm" title="08:00"></div>
+<div class="w-full bg-primary h-[95%] rounded-t-sm" title="10:00"></div>
+<div class="w-full bg-primary h-[70%] rounded-t-sm" title="12:00"></div>
+<div class="w-full bg-purple-500 h-[60%] rounded-t-sm" title="14:00"></div>
+<div class="w-full bg-purple-400 h-[55%] rounded-t-sm" title="16:00"></div>
+<div class="w-full bg-purple-300 h-[40%] rounded-t-sm" title="18:00"></div>
+<div class="w-full bg-purple-200 h-[30%] rounded-t-sm" title="20:00"></div>
+<div class="w-full bg-purple-100 h-[20%] rounded-t-sm" title="22:00"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-slate-400 font-medium px-1">
+<span>00:00</span>
+<span>08:00</span>
+<span>12:00</span>
+<span>16:00</span>
+<span>23:59</span>
+</div>
+</div>
+</div>
+<!-- Right-hand Status Area -->
+<div class="col-span-12 lg:col-span-4 grid grid-rows-2 gap-6">
+<div class="bg-primary-container text-on-primary rounded-xl p-6 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-20">
+<span class="material-symbols-outlined text-8xl" data-icon="wifi_tethering">wifi_tethering</span>
+</div>
+<p class="text-sm font-medium opacity-80 mb-1">Active Signals</p>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-black font-headline">14</span>
+<span class="text-xs font-bold bg-white/20 px-2 py-0.5 rounded-full">+2 from yesterday</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col justify-center border-l-4 border-tertiary">
+<p class="text-sm font-medium text-on-surface-variant mb-1">Engagement Score</p>
+<div class="flex items-center justify-between">
+<span class="text-5xl font-black font-headline text-on-surface">82%</span>
+<div class="w-16 h-16 relative">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-tertiary" cx="32" cy="32" fill="transparent" r="28" stroke="currentColor" stroke-dasharray="175.9" stroke-dashoffset="31.6" stroke-width="4"></circle>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Central List of Alerts -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold font-headline">High-Risk Isolation Alerts</h2>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 text-xs font-semibold rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors">Sort by Urgency</button>
+<button class="px-4 py-1.5 text-xs font-semibold rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors">Filter</button>
+</div>
+</div>
+<!-- Alert Card 1: Urgent -->
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:bg-purple-50/30 group">
+<div class="flex flex-col md:flex-row md:items-start gap-6">
+<div class="relative shrink-0">
+<img alt="Elara Vance" class="w-16 h-16 rounded-full ring-4 ring-error/10" data-alt="close-up portrait of an elderly woman with silver hair looking contemplative and gentle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBRM_7OhDPNAnbFh6_j2uPFY1G9KjfqVni8Q5UoEJxmFLuw980ax0ILiWxwh9vk9HhIejMx8dck4uA2a6_ip4872BmgB5Wq4Io7nV444MXnrqNSb7skMT063nUE85BH3MiJAr_inPgEL49qkoatipbJQnLMZrPshjqf08xXAayTdpMpnahn7v9zg00DlvDBue8ZHFBuN5K1liIbsplQDznBBbikr4nPRxdJQLhukeCgAYgkCUTPLNokkIaur5mdI7zH3WEmPpzqdE"/>
+<div class="absolute -bottom-1 -right-1 bg-error w-5 h-5 rounded-full border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white" data-icon="priority_high">priority_high</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="text-lg font-bold font-headline">Elara Vance</h3>
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-error text-on-error">Urgent Intervention</span>
+<span class="text-xs text-slate-400 ml-auto">Alert triggered 14m ago</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                Multiple movement sensors in the primary living area have reported zero activity for over 6 hours during typical peak activity windows. Social engagement metrics have dropped below the 15th percentile for the third consecutive day.
+                            </p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary-container text-on-primary text-xs font-bold px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity">Initiate Action</button>
+<button class="bg-surface-container-high text-on-surface text-xs font-bold px-5 py-2.5 rounded-md hover:bg-surface-container-highest transition-colors">Log Observation</button>
+<button class="text-on-surface-variant text-xs font-semibold px-5 py-2.5 rounded-md hover:text-on-surface transition-colors">Dismiss Signal</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Alert Card 2: Monitor -->
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:bg-purple-50/30 group">
+<div class="flex flex-col md:flex-row md:items-start gap-6">
+<div class="relative shrink-0">
+<img alt="Marcus Chen" class="w-16 h-16 rounded-full ring-4 ring-tertiary/10" data-alt="portrait of a middle-aged man with short dark hair and professional glasses in a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo9lcO9d47H8RfsW20yxYkyP7ABMSkWzvKdHNmcnzq1h_vfM8HU4s7JhTAnsoKvnnzv-olP87ux_eA_0AyiOlETHvn83Y1tNPjHVIiv1_EsopRGtYu5Ujpyf8Thyb6egDUV4N3VEnFCXTMj-2eKfbRxalAbTwTVTTEtIZZjhOvTM4GlRSABYTziOyd51rNJOeeS6erYQ1d2j4AkzrIu7IJQ3HvV9AUSokPv_zWShYzM8VSDyD7Sg32qwMDZAteONKVYVwAoEOnijw"/>
+<div class="absolute -bottom-1 -right-1 bg-tertiary w-5 h-5 rounded-full border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white" data-icon="trending_down">trending_down</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="text-lg font-bold font-headline">Marcus Chen</h3>
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-tertiary text-on-tertiary">Monitor Trend</span>
+<span class="text-xs text-slate-400 ml-auto">Analysis updated 2h ago</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                Gradual decline in outbound communication frequency noted over the last 14 days. Bio-metrics indicate elevated cortisol markers during evening hours. Risk of social withdrawal is trending upward from baseline.
+                            </p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary-container text-on-primary text-xs font-bold px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity">Initiate Action</button>
+<button class="bg-surface-container-high text-on-surface text-xs font-bold px-5 py-2.5 rounded-md hover:bg-surface-container-highest transition-colors">Log Observation</button>
+<button class="text-on-surface-variant text-xs font-semibold px-5 py-2.5 rounded-md hover:text-on-surface transition-colors">Dismiss Signal</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Alert Card 3: Observation -->
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all hover:bg-purple-50/30 group">
+<div class="flex flex-col md:flex-row md:items-start gap-6">
+<div class="relative shrink-0">
+<img alt="Sasha Kroll" class="w-16 h-16 rounded-full ring-4 ring-primary/10" data-alt="smiling young woman with braided hair wearing a simple linen top against a bright window light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8P-MTUB8PCaDzNUZWiiNeh1OD-elJ64jOzRvR5dyIMuiYy_NWNq8zhrHcnnGcbsDtarKZ96YWrKhOTR0Nk3zXIdFvq98m25DqWlZ9n9PvobYjGc2EfMmFkd5vnPD-259sEa8jG0-d2PxRdRzXwY2W7XYLwmMRDPeoZ1GsGHvdrIXMHWQU7qhFd7ZXyfkRR-Dm-R_ojZypXs5mDCJBsSrXJ_zZC-Fix-6fI-VkZHmkklXo0_1uQgifU-HkM-mb9QoKPxuGTboQIUc"/>
+<div class="absolute -bottom-1 -right-1 bg-primary w-5 h-5 rounded-full border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-white" data-icon="visibility">visibility</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-3 mb-2">
+<h3 class="text-lg font-bold font-headline">Sasha Kroll</h3>
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-secondary-container text-on-secondary-container">Observation</span>
+<span class="text-xs text-slate-400 ml-auto">Scheduled review today</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                Subject has missed two consecutive community-based wellness sessions. While digital engagement remains stable, physical community markers have dipped. No immediate intervention required, but check-in is recommended.
+                            </p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary-container text-on-primary text-xs font-bold px-5 py-2.5 rounded-md hover:opacity-90 transition-opacity">Initiate Action</button>
+<button class="bg-surface-container-high text-on-surface text-xs font-bold px-5 py-2.5 rounded-md hover:bg-surface-container-highest transition-colors">Log Observation</button>
+<button class="text-on-surface-variant text-xs font-semibold px-5 py-2.5 rounded-md hover:text-on-surface transition-colors">Dismiss Signal</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

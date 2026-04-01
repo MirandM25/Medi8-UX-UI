@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Medi8 Pulse | Trend Visualization & Risk Monitoring</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#dabce6",
+              "surface-container-high": "#e6e9e8",
+              "outline-variant": "#d1c2d2",
+              "surface-container": "#ebeeed",
+              "primary-fixed": "#f8d8ff",
+              "surface-dim": "#d7dbda",
+              "inverse-on-surface": "#eef1f0",
+              "primary-container": "#8e44ad",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-background": "#181c1c",
+              "on-surface": "#181c1c",
+              "on-secondary-fixed-variant": "#553e61",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2d3131",
+              "on-tertiary-container": "#474000",
+              "primary-fixed-dim": "#ecb2ff",
+              "on-secondary-container": "#71587c",
+              "on-tertiary-fixed-variant": "#4f4800",
+              "on-secondary-fixed": "#271333",
+              "on-surface-variant": "#4e4350",
+              "surface-container-highest": "#e0e3e2",
+              "secondary-container": "#f2d2fe",
+              "surface-tint": "#873da6",
+              "on-primary-fixed-variant": "#6c228c",
+              "on-primary-fixed": "#320047",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#f2e57b",
+              "surface-bright": "#f7faf9",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#f5d9ff",
+              "on-tertiary-fixed": "#1f1c00",
+              "surface": "#f7faf9",
+              "surface-variant": "#e0e3e2",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#807381",
+              "inverse-primary": "#ecb2ff",
+              "on-primary-container": "#f8d8ff",
+              "primary": "#732993",
+              "surface-container-low": "#f1f4f3",
+              "tertiary-fixed-dim": "#d5c962",
+              "secondary": "#6e557a",
+              "on-error": "#ffffff",
+              "background": "#f7faf9",
+              "tertiary-container": "#b9ad4a",
+              "tertiary": "#695f00",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-slate-50 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 overflow-y-auto flex flex-col py-6 px-4 z-50">
+<div class="mb-10 px-2">
+<span class="text-lg font-black tracking-tight text-purple-700 dark:text-purple-400">Medi8 Pulse</span>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="index.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium Inter">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="clients.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-medium Inter">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="alerts.html">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="text-sm font-medium Inter">Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-purple-700 dark:text-purple-300 font-bold border-r-4 border-purple-600 dark:border-purple-400 bg-purple-50 dark:bg-purple-900/20 transition-all opacity-90" href="trends.html">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-sm font-medium Inter">Trends</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="map-analytics.html">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-sm font-medium Inter">Map Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="reports.html">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-sm font-medium Inter">Reports</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-2.5 px-4 rounded-md font-bold text-sm mb-6 shadow-sm">
+                New Consultation
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-sm font-medium Inter">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-sm font-medium Inter">Logout</span>
+</a>
+</div>
+<div class="mt-6 flex items-center gap-3 px-2">
+<img alt="Dr. Aris Thorne" class="w-8 h-8 rounded-full bg-purple-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkwOV9QEHO_XnqVhjpaiD3pG-4-tYptZM5W6SC_Qs1FSqFWnyShraCSkP_t2rHvnDBC4Q2thoE5CGrPJ62kwDNazj-ZkPGyFbfw5TH99c0J6yG-sFp3PkJdNbTHM8j0fwFWKi1NJ6i6giM5cWV4nHrJoR0dSppVD9BNDiSbVq6ihf8eTR8FcpYxT1N46On-oixuZnPVRR7C0O94t5uhb26yIzppToJ8pcrpsX8SvuITTk3G4gNQWoRbL6yN3s5mUiDHIs08adFWYk"/>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Dr. Aris Thorne</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Chief Advisor</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-8">
+<div class="flex items-center flex-grow max-w-xl">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-purple-500/20 rounded-lg">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm Inter focus:ring-0" placeholder="Search client records, symptoms, or clinical notes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity">
+<span class="material-symbols-outlined" data-icon="health_metrics">health_metrics</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800"></div>
+<img alt="Dr. Aris Thorne" class="w-8 h-8 rounded-full border border-purple-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA5a5_s_uQA6RyDHkeENXWWAczxae6qdqmyrDMkPQp0zjfAA1B0524D9RP71lHZnS-TRat0gfeMmw8the4CUviAUyuiIngrQp4pZuje0NfyM6Xv_lmWAgxfTIOjXzpvxHA8LzUxkmRYB-RM0UzW0_o1lnsccRxtbDiu88giM-yS5OXXbAxcpvcP36lUInZ18BDNCzL8ZcCAZLjCB8nb4Np3y4gYTfNNAulLO-m_ZegUBYRZHPo5FoVhaoHCyq0ot8kdL7XA3twMUU"/>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-16 min-h-screen flex flex-col overflow-hidden relative">
+<!-- TopAppBar Component -->
+<header class="w-full sticky top-0 z-30 bg-white/80 backdrop-blur-xl flex items-center justify-between px-8 py-4">
+<div class="flex items-center gap-10">
+<h2 class="text-xl font-extrabold tracking-tight text-on-surface font-headline">Trend Visualization &amp; Risk Monitoring</h2>
+<div class="hidden md:flex items-center gap-2 bg-surface-variant px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant/50 text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-body text-on-surface w-64 placeholder:text-on-surface-variant/40" placeholder="Search cohort or client..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-1">
+<button class="p-2.5 text-on-surface-variant hover:bg-surface-variant transition-colors rounded-full">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+<button class="p-2.5 text-on-surface-variant hover:bg-surface-variant transition-colors rounded-full">
+<span class="material-symbols-outlined text-[22px]">person_pin_circle</span>
+</button>
+<button class="p-2.5 text-on-surface-variant hover:bg-surface-variant transition-colors rounded-full">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline/40"></div>
+<img alt="Advisor Profile" class="w-10 h-10 rounded-full object-cover ring-4 ring-purple-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwrmBpvV3Qn75-gW88-_0saOI93UYhf68AjDLH-ndSycJroDLJdJ_jVdMvKpEzBp34X5BptZFmWrqqpeWHrAU10Dsa1_ZheSRnnReW6KdAmsNeS6rBlQ9GegSb7zmUhVMorXJWwZJLaoaYbvTzWAFn9QnzYnx_IF_yKNhEQFLiBTNXZ35FMsgFKQRp972iB-Fzv08oVl6SllSDe3sQu_TJvMXiK53vMXVZW7YbwwpXWyZW25dmPCbCazXfk6nTits1jtMg4bqbfdg"/>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 overflow-y-auto p-8 space-y-10 bg-surface">
+<!-- Hero: Isolation Risk Waves -->
+<section class="space-y-6">
+<div class="flex items-end justify-between">
+<div>
+<h3 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight">Isolation Risk Waves</h3>
+<p class="text-sm text-on-surface-variant font-body mt-1">Fluctuating social vulnerability metrics across current user base</p>
+</div>
+<div class="flex items-center gap-6 text-[10px] font-extrabold uppercase tracking-[0.15em] text-on-surface-variant/60">
+<span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span> Primary Cohort</span>
+<span class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full" style="background:#1ABC9C"></span> Control Group</span>
+</div>
+</div>
+<div class="h-56 w-full bg-surface-variant rounded-2xl overflow-hidden relative flex flex-col justify-end">
+<svg class="absolute bottom-0 w-full h-full opacity-40" style="mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);" viewBox="0 0 1000 200">
+<defs>
+<linearGradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#732993;stop-opacity:0.8"></stop>
+<stop offset="100%" style="stop-color:#f8d8ff;stop-opacity:0.2"></stop>
+</linearGradient>
+<linearGradient id="grad2" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#1ABC9C;stop-opacity:0.6"></stop>
+<stop offset="100%" style="stop-color:#E8F8F5;stop-opacity:0.1"></stop>
+</linearGradient>
+</defs>
+<path d="M0,150 C150,100 350,200 500,150 C650,100 850,200 1000,150 L1000,200 L0,200 Z" fill="url(#grad1)"></path>
+<path d="M0,120 C200,180 400,80 600,120 C800,160 900,100 1000,140 L1000,200 L0,200 Z" fill="url(#grad2)"></path>
+</svg>
+<div class="flex justify-between px-10 pb-6 relative z-10">
+<span class="text-[11px] font-extrabold text-on-surface-variant/40 uppercase tracking-tighter">Jan 01</span>
+<span class="text-[11px] font-extrabold text-on-surface-variant/40 uppercase tracking-tighter">Jan 08</span>
+<span class="text-[11px] font-extrabold text-on-surface-variant/40 uppercase tracking-tighter">Jan 15</span>
+<span class="text-[11px] font-extrabold text-on-surface-variant/40 uppercase tracking-tighter">Jan 22</span>
+<span class="text-[11px] font-extrabold text-primary font-black uppercase tracking-tighter">Current</span>
+</div>
+</div>
+</section>
+<!-- Main Grid: Heat Map & Risk Alerts -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Heat Map: Weekly Activity Patterns -->
+<div class="lg:col-span-8 bg-surface-variant rounded-2xl p-8 flex flex-col">
+<div class="flex items-center justify-between mb-8">
+<h4 class="text-base font-headline font-extrabold text-on-surface">Cohort Activity Heat Map</h4>
+<button class="text-xs font-bold text-primary flex items-center gap-1.5 hover:underline">
+Full Dataset <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="grid grid-cols-8 gap-3 flex-1">
+<div class="col-span-1"></div>
+<div class="text-[10px] font-black text-center text-on-surface-variant/50 tracking-widest">MON</div>
+<div class="text-[10px] font-black text-center text-on-surface-variant/50 tracking-widest">TUE</div>
+<div class="text-[10px] font-black text-center text-on-surface-variant/50 tracking-widest">WED</div>
+<div class="text-[10px] font-black text-center text-on-surface-variant/50 tracking-widest">THU</div>
+<div class="text-[10px] font-black text-center text-on-surface-variant/50 tracking-widest">FRI</div>
+<div class="text-[10px] font-black text-center text-on-surface-variant/50 tracking-widest">SAT</div>
+<div class="text-[10px] font-black text-center text-on-surface-variant/50 tracking-widest">SUN</div>
+<div class="text-[10px] font-bold text-on-surface-variant/50 py-2">08:00</div>
+<div class="bg-primary/5 rounded-lg"></div>
+<div class="bg-primary/20 rounded-lg"></div>
+<div class="bg-primary/10 rounded-lg"></div>
+<div class="bg-primary/40 rounded-lg"></div>
+<div class="bg-primary/10 rounded-lg"></div>
+<div class="bg-primary/5 rounded-lg"></div>
+<div class="bg-primary/5 rounded-lg"></div>
+<div class="text-[10px] font-bold text-on-surface-variant/50 py-2">12:00</div>
+<div class="bg-primary/30 rounded-lg"></div>
+<div class="bg-primary/60 rounded-lg shadow-sm"></div>
+<div class="bg-primary/40 rounded-lg"></div>
+<div class="bg-primary/70 rounded-lg shadow-sm"></div>
+<div class="bg-primary/20 rounded-lg"></div>
+<div class="bg-primary/10 rounded-lg"></div>
+<div class="bg-primary/10 rounded-lg"></div>
+<div class="text-[10px] font-bold text-on-surface-variant/50 py-2">16:00</div>
+<div class="bg-primary/20 rounded-lg"></div>
+<div class="bg-primary/30 rounded-lg"></div>
+<div class="bg-primary/80 rounded-lg shadow-md"></div>
+<div class="bg-primary/30 rounded-lg"></div>
+<div class="bg-primary/50 rounded-lg"></div>
+<div class="bg-primary/20 rounded-lg"></div>
+<div class="bg-primary/30 rounded-lg"></div>
+<div class="text-[10px] font-bold text-on-surface-variant/50 py-2">20:00</div>
+<div class="bg-primary/5 rounded-lg"></div>
+<div class="bg-primary/5 rounded-lg"></div>
+<div class="bg-primary/10 rounded-lg"></div>
+<div class="bg-primary/5 rounded-lg"></div>
+<div class="bg-primary/20 rounded-lg"></div>
+<div class="bg-error/10 rounded-lg"></div>
+<div class="bg-error/30 rounded-lg"></div>
+</div>
+<div class="mt-10 flex items-center gap-8">
+<div class="flex items-center gap-2.5">
+<span class="w-3.5 h-3.5 rounded bg-primary/5"></span>
+<span class="text-[11px] text-on-surface-variant font-bold">Low Activity</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="w-3.5 h-3.5 rounded bg-primary/80"></span>
+<span class="text-[11px] text-on-surface-variant font-bold">Peak Engagement</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="w-3.5 h-3.5 rounded bg-error/30"></span>
+<span class="text-[11px] text-on-surface-variant font-bold">Solitude Threshold</span>
+</div>
+</div>
+</div>
+<!-- Risk Alert List -->
+<div class="lg:col-span-4 space-y-6">
+<h4 class="text-base font-headline font-extrabold text-on-surface px-1">Critical Risk Alerts</h4>
+<!-- Alert Item -->
+<div class="bg-white rounded-2xl p-6 space-y-4 shadow-sm transition-all hover:translate-y-[-4px] hover:shadow-xl hover:shadow-primary/5 bg-gradient-to-br from-white to-surface-variant">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<img alt="Client" class="w-12 h-12 rounded-full object-cover ring-2 ring-primary/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsJQvbGR5_hmoERhR4NyD3Vuj0Eclg3TmME6qZC8SDaSNs4uN54g90WhmSSS0701d3tW6e89qh9xH-McFBDLnoBcC1D7YVe53RHijUgPdcBiq9Wkzjxit_OdaXda1Oh2kQ4JeFAKcD3IWQj312hAAQQSOZd6o302ou9x3UR4k263lbzD_l6ylVlEXywePWAaz4KlmjGhKj5gvaaLMA3Hc21cY8h1FuDshTl9aUQr0Ycr1xTlqNcS-HAxLwm4uoiZZA8Ctihaxgado"/>
+<div>
+<p class="text-sm font-extrabold text-on-surface">Elena Richardson</p>
+<p class="text-[10px] text-primary font-black uppercase tracking-widest mt-0.5">ID: #8821</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-error text-on-error text-[10px] font-black uppercase tracking-widest">High</span>
+</div>
+<div class="bg-error-container p-4 rounded-xl">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-error text-lg">bedtime</span>
+<span class="text-xs font-black text-on-error-container uppercase tracking-tight">Extended Nighttime Solitude</span>
+</div>
+<p class="text-[11px] text-on-error-container/70 leading-relaxed font-medium">No social digital or physical interaction recorded for 48+ hours during evening cycles.</p>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="bg-white rounded-2xl p-6 space-y-4 shadow-sm transition-all hover:translate-y-[-4px] hover:shadow-xl hover:shadow-primary/5 bg-gradient-to-br from-white to-surface-variant">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<img alt="Client" class="w-12 h-12 rounded-full object-cover ring-2 ring-primary/10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFA9CWSIAOnUzRcJMlduC9T0YMpZeSZN4QkTPDwg0ljIZe1h3j7MV33pSZDdzyfSOr91mN-p7sbulncQiAyOLChb3p_yZQMKNHEnCLcBiMnQwSV6AOqTObwqq5nku-r1GTA5htOYfrzwz8Uu9PEmkWlxyB-UR-TjtJEFbZwBrxkjAgnBffRyCOemXgqnqNNUTYkSvMQcF2s16_vfNPCXHS3yqFQG9FbFnVXY5hmU32ewrXf0tKxwFddgrFDyzEYBDCrzJHFglatkk"/>
+<div>
+<p class="text-sm font-extrabold text-on-surface">Marcus Thorne</p>
+<p class="text-[10px] text-primary font-black uppercase tracking-widest mt-0.5">ID: #1245</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-purple-100 text-primary text-[10px] font-black uppercase tracking-widest">Medium</span>
+</div>
+<div class="bg-purple-50 p-4 rounded-xl">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="material-symbols-outlined text-primary text-lg">near_me</span>
+<span class="text-xs font-black text-on-surface uppercase tracking-tight">Decreased Spatial Range</span>
+</div>
+<p class="text-[11px] text-on-surface-variant/70 leading-relaxed font-medium">Daily movement restricted to &lt; 50m radius for 4 consecutive days.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Asymmetric Section: Comparative Trends -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+<div class="lg:col-span-4 bg-primary p-10 rounded-2xl text-on-primary space-y-8 shadow-2xl shadow-primary/30">
+<h4 class="text-2xl font-headline font-extrabold leading-tight">Collective Health Insights</h4>
+<p class="text-sm opacity-90 leading-relaxed font-medium">Individual social patterns are currently deviating from the community mean by 14.2%. This suggests a localized trend of withdrawal across the North Sector.</p>
+<div class="space-y-5">
+<div class="bg-white/10 p-5 rounded-2xl">
+<div class="flex justify-between items-end mb-3">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] opacity-70">Community Avg</span>
+<span class="text-2xl font-extrabold">78%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-white w-[78%]"></div>
+</div>
+</div>
+<div class="bg-white/10 p-5 rounded-2xl border border-white/10">
+<div class="flex justify-between items-end mb-3">
+<span class="text-[10px] font-black uppercase tracking-[0.2em] opacity-70">Selected Group</span>
+<span class="text-2xl font-extrabold">61%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-error w-[61%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between px-2">
+<h4 class="text-base font-headline font-extrabold text-on-surface">Comparative Engagement Over Time</h4>
+<div class="flex gap-1.5 p-1 bg-surface-variant rounded-full">
+<span class="px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-on-surface-variant/50 cursor-pointer hover:text-on-surface transition-colors">Day</span>
+<span class="px-4 py-1.5 rounded-full bg-primary text-[10px] font-black uppercase tracking-widest text-on-primary shadow-sm shadow-primary/20">Week</span>
+<span class="px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest text-on-surface-variant/50 cursor-pointer hover:text-on-surface transition-colors">Month</span>
+</div>
+</div>
+<div class="h-72 w-full bg-surface-variant rounded-2xl relative p-8">
+<!-- Chart Mockup -->
+<div class="absolute inset-0 p-10 flex items-end gap-1.5">
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[40%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[45%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[60%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[55%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[70%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[65%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[80%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[75%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[50%]"></div>
+<div class="flex-1 bg-primary/10 rounded-t-xl h-[40%]"></div>
+</div>
+<!-- Trend Line Overlay -->
+<svg class="absolute inset-0 w-full h-full p-10 pointer-events-none" preserveAspectRatio="none" viewBox="0 0 100 100">
+<path d="M0,80 Q10,75 20,60 T40,40 T60,50 T80,20 T100,30" fill="none" stroke="#732993" stroke-width="2.5" vector-effect="non-scaling-stroke"></path>
+<path d="M0,90 Q10,85 20,70 T40,60 T60,75 T80,50 T100,60" fill="none" stroke="#ba1a1a" stroke-dasharray="4 3" stroke-width="2.5" vector-effect="non-scaling-stroke"></path>
+</svg>
+<div class="absolute bottom-3 left-0 w-full flex justify-around text-[10px] font-black text-on-surface-variant/30 tracking-widest">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- NavigationDrawer Component -->
+<aside class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl z-50 flex flex-col transition-all translate-x-0">
+<div class="p-8 pb-6">
+<h3 class="text-lg font-extrabold text-on-surface font-headline">Action Panel</h3>
+<p class="text-[11px] text-on-surface-variant font-medium mt-1">Nudge Tools &amp; Recommendations</p>
+</div>
+<nav class="flex px-4">
+<button class="flex-1 py-4 text-[10px] font-black uppercase tracking-widest border-b-2 border-primary text-primary flex flex-col items-center gap-1.5">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span>Interventions</span>
+</button>
+<button class="flex-1 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant/40 hover:text-primary transition-colors flex flex-col items-center gap-1.5">
+<span class="material-symbols-outlined text-xl">send_to_mobile</span>
+<span>Quick Nudge</span>
+</button>
+<button class="flex-1 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant/40 hover:text-primary transition-colors flex flex-col items-center gap-1.5">
+<span class="material-symbols-outlined text-xl">edit_note</span>
+<span>Notes</span>
+</button>
+</nav>
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<div class="space-y-4">
+<h5 class="text-[10px] font-black uppercase tracking-[0.2em] text-on-surface-variant/40">Recommended Steps</h5>
+<div class="group cursor-pointer">
+<div class="flex items-start gap-4 p-5 rounded-2xl bg-surface-variant hover:bg-purple-50 transition-all group-hover:shadow-lg group-hover:shadow-primary/5">
+<div class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-600 shrink-0">
+<span class="material-symbols-outlined text-lg">call</span>
+</div>
+<div>
+<p class="text-[13px] font-extrabold text-on-surface">Scheduled Check-in</p>
+<p class="text-[11px] text-on-surface-variant mt-1 leading-normal font-medium">Initiate voice-call for Elena R. within next 2 hours.</p>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="flex items-start gap-4 p-5 rounded-2xl bg-surface-variant hover:bg-purple-50 transition-all group-hover:shadow-lg group-hover:shadow-primary/5">
+<div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-lg">diversity_3</span>
+</div>
+<div>
+<p class="text-[13px] font-extrabold text-on-surface">Group Invitation</p>
+<p class="text-[11px] text-on-surface-variant mt-1 leading-normal font-medium">Send 'Garden Club' digital nudge to North Sector clients.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8">
+<div class="bg-gradient-to-br from-primary to-purple-950 p-6 rounded-2xl text-on-primary shadow-xl shadow-primary/20">
+<div class="flex items-center gap-2.5 mb-3">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+<span class="text-[10px] font-black uppercase tracking-[0.2em]">AI Synthesis</span>
+</div>
+<p class="text-[12px] leading-relaxed italic font-medium opacity-90">"The current activity wave indicates a 12% probability of sustained isolation if no intervention occurs by weekend."</p>
+</div>
+</div>
+</div>
+<div class="p-8 bg-surface-variant/50">
+<button class="w-full bg-white text-primary border-2 border-primary/10 py-4 rounded-full font-headline font-extrabold text-[11px] uppercase tracking-[0.15em] flex items-center justify-center gap-2 shadow-sm hover:shadow-lg transition-all active:scale-95">
+Generate Weekly Report <span class="material-symbols-outlined text-lg">download</span>
+</button>
+</div>
+</aside>
+</body></html>
