@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Medi8 Pulse | Client Prescription Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#dabce6",
+              "surface-container-high": "#e6e9e8",
+              "outline-variant": "#d1c2d2",
+              "surface-container": "#ebeeed",
+              "primary-fixed": "#f8d8ff",
+              "surface-dim": "#d7dbda",
+              "inverse-on-surface": "#eef1f0",
+              "primary-container": "#8e44ad",
+              "on-primary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-background": "#181c1c",
+              "on-surface": "#181c1c",
+              "on-secondary-fixed-variant": "#553e61",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2d3131",
+              "on-tertiary-container": "#474000",
+              "primary-fixed-dim": "#ecb2ff",
+              "on-secondary-container": "#71587c",
+              "on-tertiary-fixed-variant": "#4f4800",
+              "on-secondary-fixed": "#271333",
+              "on-surface-variant": "#4e4350",
+              "surface-container-highest": "#e0e3e2",
+              "secondary-container": "#f2d2fe",
+              "surface-tint": "#873da6",
+              "on-primary-fixed-variant": "#6c228c",
+              "on-primary-fixed": "#320047",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#f2e57b",
+              "surface-bright": "#f7faf9",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#f5d9ff",
+              "on-tertiary-fixed": "#1f1c00",
+              "surface": "#f7faf9",
+              "surface-variant": "#e0e3e2",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#807381",
+              "inverse-primary": "#ecb2ff",
+              "on-primary-container": "#f8d8ff",
+              "primary": "#732993",
+              "surface-container-low": "#f1f4f3",
+              "tertiary-fixed-dim": "#d5c962",
+              "secondary": "#6e557a",
+              "on-error": "#ffffff",
+              "background": "#f7faf9",
+              "tertiary-container": "#b9ad4a",
+              "tertiary": "#695f00",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-slate-50 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 overflow-y-auto flex flex-col py-6 px-4 z-50">
+<div class="mb-1 px-2">
+<span class="text-lg font-black tracking-tight text-purple-700 dark:text-purple-400">Medi8 Pulse</span>
+<p class="text-[10px] text-slate-400 mt-0.5">Clinical Advisor</p>
+</div>
+<div class="mb-6"></div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="index.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium Inter">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="clients.html">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-medium Inter">Clients</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-purple-700 dark:text-purple-300 font-bold border-r-4 border-purple-600 dark:border-purple-400 bg-purple-50 dark:bg-purple-900/20 transition-all opacity-90" href="reports.html">
+<span class="material-symbols-outlined" data-icon="medication">medication</span>
+<span class="text-sm font-medium Inter">Prescriptions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="alerts.html">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="text-sm font-medium Inter">Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="trends.html">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="text-sm font-medium Inter">Trends</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200" href="map-analytics.html">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-sm font-medium Inter">Map Analytics</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
+<a href="reports.html" class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-2.5 px-4 rounded-md font-bold text-sm mb-6 shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span> New Prescription
+</a>
+<div class="space-y-1 mt-6">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-sm font-medium Inter">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-sm font-medium Inter">Logout</span>
+</a>
+</div>
+<div class="mt-6 flex items-center gap-3 px-2">
+<div class="w-8 h-8 rounded-full bg-purple-200 flex items-center justify-center text-xs font-bold text-purple-700">AT</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Dr. Aris Thorne</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Chief Advisor</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-8">
+<div class="flex items-center gap-4">
+<a href="reports.html" class="text-slate-400 hover:text-purple-700 transition">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<h1 class="text-lg font-extrabold font-headline text-on-surface">Client Prescription Detail</h1>
+</div>
+<div class="flex items-center gap-4 flex-grow max-w-md ml-8">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-purple-500/20 rounded-lg">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm Inter focus:ring-0" placeholder="Search medical records..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-400 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-400 transition-opacity">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800"></div>
+<div class="w-8 h-8 rounded-full bg-purple-100 border border-purple-200 flex items-center justify-center text-xs font-bold text-purple-700">AT</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-16 min-h-screen bg-surface">
+<div class="max-w-7xl mx-auto p-8">
+<div class="flex flex-col lg:flex-row gap-8">
+
+<!-- Left Column: Patient Info & Prescriptions -->
+<div class="flex-grow space-y-8">
+
+<!-- Patient Header Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+<div class="w-24 h-24 rounded-xl bg-purple-100 flex items-center justify-center text-3xl font-bold text-purple-700 shadow-md ring-4 ring-white">EL</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<h2 class="text-3xl font-extrabold font-headline tracking-tight text-on-surface">Elena Lira</h2>
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-100 text-green-700 border border-green-200">Active Case</span>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-sm text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">badge</span> ID: SP-99231</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">cake</span> 68 Years Old</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> West Park, Seattle</span>
+</div>
+</div>
+<a href="clients.html" class="px-5 py-2.5 bg-purple-50 text-purple-700 rounded-lg text-sm font-bold hover:bg-purple-100 transition flex items-center gap-2">
+View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+
+<!-- Active Prescriptions Section -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="px-6 py-4 flex justify-between items-center border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-purple-600 text-[20px]">add_box</span>
+<h3 class="text-lg font-bold font-headline text-on-surface">Active Prescriptions</h3>
+</div>
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Q3 Clinical Cycle</span>
+</div>
+
+<!-- Prescription 1: Daily Park Walk -->
+<div class="px-6 py-5 border-b border-slate-50 dark:border-slate-800">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h4 class="text-base font-bold text-on-surface">Daily Park Walk</h4>
+<p class="text-xs text-slate-400 mt-0.5">30 mins walk in local green space</p>
+</div>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">ACTIVE</span>
+</div>
+<div class="space-y-3">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-medium text-slate-500">Social Adherence</span>
+<span class="text-xs font-bold text-on-surface">90%</span>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-purple-600 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs text-slate-500">
+<span class="font-medium">Frequency</span>
+<span class="font-semibold text-on-surface">Daily, 08:00 AM</span>
+</div>
+</div>
+</div>
+
+<!-- Prescription 2: Bi-Weekly Community Coffee -->
+<div class="px-6 py-5 border-b border-slate-50 dark:border-slate-800">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h4 class="text-base font-bold text-on-surface">Bi-Weekly Community Coffee</h4>
+<p class="text-xs text-slate-400 mt-0.5">Peer engagement at the Community Hub</p>
+</div>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">PENDING REVIEW</span>
+</div>
+<div class="space-y-3">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-medium text-slate-500">Initial Participation</span>
+<span class="text-xs font-bold text-on-surface">45%</span>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-purple-600 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs text-slate-500">
+<span class="font-medium">Frequency</span>
+<span class="font-semibold text-on-surface">Tue / Fri, 10:30 AM</span>
+</div>
+</div>
+</div>
+
+<!-- Prescription 3: Weekly Gentle Yoga -->
+<div class="px-6 py-5">
+<div class="flex items-start justify-between mb-4">
+<div>
+<h4 class="text-base font-bold text-on-surface">Weekly Gentle Yoga</h4>
+<p class="text-xs text-slate-400 mt-0.5">Stability and flexibility focus</p>
+</div>
+<span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-200 text-slate-700">COMPLETED</span>
+</div>
+<div class="space-y-3">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="text-xs font-medium text-slate-500">Cycle Completion</span>
+<span class="text-xs font-bold text-on-surface">100%</span>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-purple-600 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs text-slate-500">
+<span class="font-medium">Ended</span>
+<span class="font-semibold text-on-surface">Oct 12, 2023</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Action Buttons -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<button class="flex items-center justify-center gap-2 px-5 py-3.5 bg-gradient-to-br from-purple-700 to-purple-900 text-white rounded-xl text-sm font-bold shadow-sm hover:opacity-90 transition">
+<span class="material-symbols-outlined text-[18px]">edit</span> Modify Prescription
+</button>
+<button class="flex items-center justify-center gap-2 px-5 py-3.5 bg-white border border-slate-200 text-on-surface rounded-xl text-sm font-bold shadow-sm hover:bg-slate-50 transition">
+<span class="material-symbols-outlined text-[18px] text-purple-600">add_circle</span> Add New Prescription
+</button>
+<button class="flex items-center justify-center gap-2 px-5 py-3.5 bg-white border border-slate-200 text-on-surface rounded-xl text-sm font-bold shadow-sm hover:bg-slate-50 transition">
+<span class="material-symbols-outlined text-[18px] text-purple-600">bar_chart</span> Generate Progress Report
+</button>
+</div>
+
+</div>
+
+<!-- Right Column: Clinical Notes -->
+<div class="w-full lg:w-80 space-y-6">
+
+<!-- Clinical Notes Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="px-6 py-4 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-purple-600 text-[20px]">clinical_notes</span>
+<h3 class="text-sm font-bold font-headline text-on-surface">Clinical Notes</h3>
+</div>
+<button class="text-slate-400 hover:text-purple-600 transition">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+
+<!-- Timeline -->
+<div class="px-6 py-4 space-y-6">
+
+<!-- Note 1: Oct 24, 2023 -->
+<div class="relative pl-6 border-l-2 border-purple-600">
+<div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-purple-600"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Oct 24, 2023</span>
+<span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider">Latest Update</span>
+</div>
+<div class="bg-purple-50 rounded-lg p-3">
+<h4 class="text-sm font-bold text-on-surface mb-1">Social Health Response</h4>
+<p class="text-xs text-slate-500 leading-relaxed">Elena reported increased energy levels after the daily walks. Suggested escalating the Bi-Weekly coffee to social lunch. Note: Watch for minor joint fatigue reported on Thursdays.</p>
+</div>
+</div>
+
+<!-- Note 2: Oct 10, 2023 -->
+<div class="relative pl-6 border-l-2 border-slate-200">
+<div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-slate-300"></div>
+<div class="mb-2">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Oct 10, 2023</span>
+</div>
+<div class="bg-slate-50 rounded-lg p-3">
+<h4 class="text-sm font-bold text-on-surface mb-1">Initial Prescription Review</h4>
+<p class="text-xs text-slate-500 leading-relaxed">Patient expressed anxiety about group activities. Recommended starting with 1-on-1 walk sessions before shifting to communal park walks.</p>
+</div>
+</div>
+
+<!-- Note 3: Sept 15, 2023 -->
+<div class="relative pl-6 border-l-2 border-slate-200">
+<div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-slate-300"></div>
+<div class="mb-2">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Sept 15, 2023</span>
+</div>
+<div class="bg-slate-50 rounded-lg p-3">
+<h4 class="text-sm font-bold text-on-surface mb-1">Baseline Intake</h4>
+<p class="text-xs text-slate-500 leading-relaxed">Initial social isolation assessment (Score: 7/10). Objective: Reduce loneliness through scheduled green-space interactions.</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- SmartCare Certified Badge -->
+<div class="bg-secondary-container/30 border border-primary/10 p-5 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-purple-600 text-3xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<p class="text-xs font-bold text-purple-700 uppercase tracking-wider">SmartCare Certified</p>
+<p class="text-[10px] text-slate-400 mt-0.5">Data verified on 2023-10-24T09:42:002</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</main>
+</body></html>
