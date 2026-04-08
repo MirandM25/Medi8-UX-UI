@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Medi8 Pulse | Reports</title>
+<title>Medi8 Pulse | Prescriptions</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -109,8 +109,8 @@
 <span class="text-sm font-medium Inter">Map Analytics</span>
 </a>
 <a class="flex items-center gap-3 px-3 py-2.5 text-purple-700 dark:text-purple-300 font-bold border-r-4 border-purple-600 dark:border-purple-400 bg-purple-50 dark:bg-purple-900/20 transition-all opacity-90" href="reports.html">
-<span class="material-symbols-outlined" data-icon="description">description</span>
-<span class="text-sm font-medium Inter">Reports</span>
+<span class="material-symbols-outlined" data-icon="medication">medication</span>
+<span class="text-sm font-medium Inter">Prescriptions</span>
 </a>
 </nav>
 <div class="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800">
@@ -128,7 +128,7 @@
 </a>
 </div>
 <div class="mt-6 flex items-center gap-3 px-2">
-<img alt="Dr. Aris Thorne" class="w-8 h-8 rounded-full bg-purple-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkwOV9QEHO_XnqVhjpaiD3pG-4-tYptZM5W6SC_Qs1FSqFWnyShraCSkP_t2rHvnDBC4Q2thoE5CGrPJ62kwDNazj-ZkPGyFbfw5TH99c0J6yG-sFp3PkJdNbTHM8j0fwFWKi1NJ6i6giM5cWV4nHrJoR0dSppVD9BNDiSbVq6ihf8eTR8FcpYxT1N46On-oixuZnPVRR7C0O94t5uhb26yIzppToJ8pcrpsX8SvuITTk3G4gNQWoRbL6yN3s5mUiDHIs08adFWYk"/>
+<div class="w-8 h-8 rounded-full bg-purple-200 flex items-center justify-center text-xs font-bold text-purple-700">AT</div>
 <div class="flex flex-col">
 <span class="text-sm font-bold text-slate-900 dark:text-white">Dr. Aris Thorne</span>
 <span class="text-xs text-slate-500 dark:text-slate-400">Chief Advisor</span>
@@ -141,7 +141,7 @@
 <div class="flex items-center flex-grow max-w-xl">
 <div class="relative w-full focus-within:ring-2 focus-within:ring-purple-500/20 rounded-lg">
 <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm Inter focus:ring-0" placeholder="Search client records, symptoms, or clinical notes..." type="text"/>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-lg text-sm Inter focus:ring-0" placeholder="Search patients or prescriptions..." type="text"/>
 </div>
 </div>
 <div class="flex items-center gap-6">
@@ -156,13 +156,205 @@
 <span class="material-symbols-outlined" data-icon="health_metrics">health_metrics</span>
 </button>
 <div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800"></div>
-<img alt="Dr. Aris Thorne" class="w-8 h-8 rounded-full border border-purple-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA5a5_s_uQA6RyDHkeENXWWAczxae6qdqmyrDMkPQp0zjfAA1B0524D9RP71lHZnS-TRat0gfeMmw8the4CUviAUyuiIngrQp4pZuje0NfyM6Xv_lmWAgxfTIOjXzpvxHA8LzUxkmRYB-RM0UzW0_o1lnsccRxtbDiu88giM-yS5OXXbAxcpvcP36lUInZ18BDNCzL8ZcCAZLjCB8nb4Np3y4gYTfNNAulLO-m_ZegUBYRZHPo5FoVhaoHCyq0ot8kdL7XA3twMUU"/>
+<div class="w-8 h-8 rounded-full bg-purple-100 border border-purple-200 flex items-center justify-center text-xs font-bold text-purple-700">AT</div>
 </div>
 </header>
 <!-- Main Content Area -->
 <main class="ml-64 pt-16 min-h-screen bg-surface">
 <div class="max-w-7xl mx-auto p-8">
-<!-- Add your Reports page content here -->
+
+<!-- Page Header -->
+<div class="flex items-center justify-between mb-8">
+<div>
+<h1 class="text-2xl font-extrabold font-headline text-on-surface">Prescription Management</h1>
+<p class="text-sm text-slate-500 mt-1">Review and modify social prescriptions across your client base.</p>
 </div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-purple-700 border border-purple-200 rounded-lg hover:bg-purple-50 transition">
+<span class="material-symbols-outlined text-[18px]">tune</span> Filter
+</button>
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-purple-700 border border-purple-200 rounded-lg hover:bg-purple-50 transition">
+<span class="material-symbols-outlined text-[18px]">download</span> Export Data
+</button>
+</div>
+</div>
+
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Total Prescriptions</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-extrabold font-headline text-on-surface">1,284</span>
+<span class="text-xs font-semibold text-green-600 mb-1">+4%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Active Cycles</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-extrabold font-headline text-on-surface">842</span>
+<span class="text-xs font-medium text-slate-400 mb-1">Stable</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Pending Review</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-extrabold font-headline text-on-surface">12</span>
+<span class="text-xs font-semibold text-red-600 mb-1">Urgent</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800">
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Completion Rate</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-extrabold font-headline text-on-surface">94.2%</span>
+<span class="text-xs font-medium text-green-600 mb-1">High</span>
+</div>
+</div>
+</div>
+
+<!-- Patient Prescriptions Table -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden mb-8">
+<table class="w-full text-sm">
+<thead>
+<tr class="border-b border-slate-100 dark:border-slate-800">
+<th class="text-left px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Patient Details</th>
+<th class="text-left px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Primary Prescription</th>
+<th class="text-left px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Frequency</th>
+<th class="text-left px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Status</th>
+<th class="text-right px-6 py-4 text-xs font-semibold text-slate-500 uppercase tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50 dark:divide-slate-800">
+<!-- Row 1: Elena Lira -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition cursor-pointer" onclick="window.location='prescription-detail.html'">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold">EL</div>
+<div>
+<p class="font-semibold text-on-surface">Elena Lira</p>
+<p class="text-xs text-slate-400">ID: SP-89231</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-purple-500">park</span> Daily Park Walk</div>
+</td>
+<td class="px-6 py-4 text-slate-600">Every Morning</td>
+<td class="px-6 py-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">ACTIVE</span></td>
+<td class="px-6 py-4 text-right"><button class="text-sm font-medium text-purple-600 hover:text-purple-800 transition">Modify</button></td>
+</tr>
+<!-- Row 2: James Miller -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition cursor-pointer" onclick="window.location='prescription-detail.html'">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-sm font-bold">JM</div>
+<div>
+<p class="font-semibold text-on-surface">James Miller</p>
+<p class="text-xs text-slate-400">ID: SP-88412</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-amber-600">local_cafe</span> Community Coffee</div>
+</td>
+<td class="px-6 py-4 text-slate-600">Bi-Weekly</td>
+<td class="px-6 py-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">PENDING</span></td>
+<td class="px-6 py-4 text-right"><button class="text-sm font-medium text-purple-600 hover:text-purple-800 transition">Review</button></td>
+</tr>
+<!-- Row 3: Sarah Wong -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition cursor-pointer" onclick="window.location='prescription-detail.html'">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-sm font-bold">SW</div>
+<div>
+<p class="font-semibold text-on-surface">Sarah Wong</p>
+<p class="text-xs text-slate-400">ID: SP-10229</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-teal-500">menu_book</span> Quiet Library Session</div>
+</td>
+<td class="px-6 py-4 text-slate-600">3x Weekly</td>
+<td class="px-6 py-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-200 text-slate-700">COMPLETED</span></td>
+<td class="px-6 py-4 text-right"><button class="text-sm font-medium text-purple-600 hover:text-purple-800 transition">Modify</button></td>
+</tr>
+<!-- Row 4: Benjamin Tims -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition cursor-pointer" onclick="window.location='prescription-detail.html'">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center text-sm font-bold">BT</div>
+<div>
+<p class="font-semibold text-on-surface">Benjamin Tims</p>
+<p class="text-xs text-slate-400">ID: SP-77210</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-rose-400">self_improvement</span> Gentle Yoga Class</div>
+</td>
+<td class="px-6 py-4 text-slate-600">Weekly</td>
+<td class="px-6 py-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">ACTIVE</span></td>
+<td class="px-6 py-4 text-right"><button class="text-sm font-medium text-purple-600 hover:text-purple-800 transition">Modify</button></td>
+</tr>
+<!-- Row 5: Anaya Hudson -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition cursor-pointer" onclick="window.location='prescription-detail.html'">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-sm font-bold">AH</div>
+<div>
+<p class="font-semibold text-on-surface">Anaya Hudson</p>
+<p class="text-xs text-slate-400">ID: SP-86155</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-sky-500">groups</span> Support Group Meeting</div>
+</td>
+<td class="px-6 py-4 text-slate-600">Monthly</td>
+<td class="px-6 py-4"><span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-700">ACTIVE</span></td>
+<td class="px-6 py-4 text-right"><button class="text-sm font-medium text-purple-600 hover:text-purple-800 transition">Modify</button></td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-slate-100 dark:border-slate-800">
+<p class="text-xs text-slate-500">Showing 1 to 5 of 1,284 patients</p>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded text-slate-400 hover:bg-slate-100 transition">&lt;</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-purple-600 text-white text-sm font-bold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-slate-600 hover:bg-slate-100 text-sm transition">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-slate-600 hover:bg-slate-100 text-sm transition">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded text-slate-400 hover:bg-slate-100 transition">&gt;</button>
+</div>
+</div>
+</div>
+
+<!-- Bottom Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Prescription Optimization Card -->
+<div class="bg-gradient-to-br from-purple-700 to-purple-900 rounded-xl p-6 text-white relative overflow-hidden">
+<div class="absolute top-3 right-3 opacity-10 text-[80px] material-symbols-outlined">auto_awesome</div>
+<h3 class="text-lg font-bold font-headline mb-2">Prescription Optimization</h3>
+<p class="text-sm text-purple-200 mb-5">Our AI suggested updates for 8 patients based on recent mental wellness check-ins.</p>
+<button class="px-5 py-2.5 bg-white text-purple-700 rounded-lg text-sm font-bold hover:bg-purple-50 transition">View Suggestions</button>
+</div>
+<!-- Compliance Alert Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+<h3 class="text-lg font-bold font-headline text-on-surface mb-2">Compliance Alert</h3>
+<p class="text-sm text-slate-500 mb-5">Patient <span class="font-semibold text-on-surface">James Miller</span> has missed 3 scheduled coffee mornings. Immediate outreach recommended.</p>
+<div class="flex items-center gap-3">
+<button class="px-5 py-2.5 bg-red-600 text-white rounded-lg text-sm font-bold hover:bg-red-700 transition">Urgent Follow-up</button>
+<button class="text-sm font-medium text-slate-500 hover:text-slate-700 transition">Dismiss Alert</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Floating Action Button -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-purple-700 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-purple-800 transition z-50">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+
 </main>
 </body></html>
