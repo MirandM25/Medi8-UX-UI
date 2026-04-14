@@ -79,6 +79,13 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes scaleIn { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.2); } 100% { transform: scale(1); opacity: 1; } }
+        @keyframes drawCheck { to { stroke-dashoffset: 0; } }
+        @keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+        .spinner { animation: spin 0.8s linear infinite; }
+        .checkmark-circle { animation: scaleIn 0.4s ease-out forwards; }
+        .checkmark-path { stroke-dasharray: 30; stroke-dashoffset: 30; animation: drawCheck 0.4s ease-out 0.3s forwards; }
     </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen">
@@ -183,7 +190,7 @@
 </div>
 <div class="flex flex-wrap items-center gap-4 text-sm text-slate-500">
 <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">badge</span> ID: SP-99231</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">cake</span> 68 Years Old</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">cake</span> 32 Years Old</span>
 <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> West Park, Seattle</span>
 </div>
 </div>
@@ -200,7 +207,7 @@ View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</s
 <span class="material-symbols-outlined text-purple-600 text-[20px]">add_box</span>
 <h3 class="text-lg font-bold font-headline text-on-surface">Active Prescriptions</h3>
 </div>
-<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Q3 Clinical Cycle</span>
+<span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Q2 Clinical Cycle</span>
 </div>
 
 <!-- Prescription 1: Daily Park Walk -->
@@ -276,7 +283,7 @@ View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</s
 </div>
 <div class="flex items-center justify-between text-xs text-slate-500">
 <span class="font-medium">Ended</span>
-<span class="font-semibold text-on-surface">Oct 12, 2023</span>
+<span class="font-semibold text-on-surface">Mar 18, 2026</span>
 </div>
 </div>
 </div>
@@ -284,10 +291,10 @@ View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</s
 
 <!-- Action Buttons -->
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-<button class="flex items-center justify-center gap-2 px-5 py-3.5 bg-gradient-to-br from-purple-700 to-purple-900 text-white rounded-xl text-sm font-bold shadow-sm hover:opacity-90 transition">
+<button onclick="document.getElementById('modifyPrescriptionModal').classList.remove('hidden')" class="flex items-center justify-center gap-2 px-5 py-3.5 bg-gradient-to-br from-purple-700 to-purple-900 text-white rounded-xl text-sm font-bold shadow-sm hover:opacity-90 transition">
 <span class="material-symbols-outlined text-[18px]">edit</span> Modify Prescription
 </button>
-<button class="flex items-center justify-center gap-2 px-5 py-3.5 bg-white border border-slate-200 text-on-surface rounded-xl text-sm font-bold shadow-sm hover:bg-slate-50 transition">
+<button onclick="document.getElementById('newPrescriptionModal').classList.remove('hidden')" class="flex items-center justify-center gap-2 px-5 py-3.5 bg-white border border-slate-200 text-on-surface rounded-xl text-sm font-bold shadow-sm hover:bg-slate-50 transition">
 <span class="material-symbols-outlined text-[18px] text-purple-600">add_circle</span> Add New Prescription
 </button>
 <button class="flex items-center justify-center gap-2 px-5 py-3.5 bg-white border border-slate-200 text-on-surface rounded-xl text-sm font-bold shadow-sm hover:bg-slate-50 transition">
@@ -315,11 +322,11 @@ View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</s
 <!-- Timeline -->
 <div class="px-6 py-4 space-y-6">
 
-<!-- Note 1: Oct 24, 2023 -->
+<!-- Note 1: Apr 8, 2026 -->
 <div class="relative pl-6 border-l-2 border-purple-600">
 <div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-purple-600"></div>
 <div class="flex items-center justify-between mb-2">
-<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Oct 24, 2023</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Apr 8, 2026</span>
 <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider">Latest Update</span>
 </div>
 <div class="bg-purple-50 rounded-lg p-3">
@@ -328,11 +335,11 @@ View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</s
 </div>
 </div>
 
-<!-- Note 2: Oct 10, 2023 -->
+<!-- Note 2: Mar 15, 2026 -->
 <div class="relative pl-6 border-l-2 border-slate-200">
 <div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-slate-300"></div>
 <div class="mb-2">
-<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Oct 10, 2023</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Mar 15, 2026</span>
 </div>
 <div class="bg-slate-50 rounded-lg p-3">
 <h4 class="text-sm font-bold text-on-surface mb-1">Initial Prescription Review</h4>
@@ -340,11 +347,11 @@ View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</s
 </div>
 </div>
 
-<!-- Note 3: Sept 15, 2023 -->
+<!-- Note 3: Feb 10, 2026 -->
 <div class="relative pl-6 border-l-2 border-slate-200">
 <div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-slate-300"></div>
 <div class="mb-2">
-<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Sept 15, 2023</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Feb 10, 2026</span>
 </div>
 <div class="bg-slate-50 rounded-lg p-3">
 <h4 class="text-sm font-bold text-on-surface mb-1">Baseline Intake</h4>
@@ -360,7 +367,7 @@ View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</s
 <span class="material-symbols-outlined text-purple-600 text-3xl" style="font-variation-settings: 'FILL' 1;">verified</span>
 <div>
 <p class="text-xs font-bold text-purple-700 uppercase tracking-wider">SmartCare Certified</p>
-<p class="text-[10px] text-slate-400 mt-0.5">Data verified on 2023-10-24T09:42:002</p>
+<p class="text-[10px] text-slate-400 mt-0.5">Data verified on 2026-04-08T09:42:00Z</p>
 </div>
 </div>
 
@@ -369,4 +376,469 @@ View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</s
 </div>
 </div>
 </main>
+
+<!-- Modify Prescription Modal -->
+<div id="modifyPrescriptionModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-[2px] p-4 md:p-8">
+<div class="bg-white w-full max-w-6xl max-h-[92vh] rounded-xl flex flex-col shadow-2xl overflow-hidden">
+
+<!-- Header with Breadcrumb -->
+<header class="px-8 py-5 bg-white border-b border-slate-100">
+<div class="flex items-center justify-between">
+<div>
+<nav class="flex items-center gap-2 text-xs text-slate-400 mb-3">
+<span>Medi8 Pulse</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Prescriptions</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-slate-600">Elena Lira</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-purple-700 font-semibold">Modify Prescription</span>
+</nav>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-lg font-bold text-purple-700">EL</div>
+<div>
+<h2 class="text-xl font-bold font-headline text-on-surface">Elena Lira</h2>
+<div class="flex items-center gap-3 text-xs text-slate-500 mt-0.5">
+<span class="px-2 py-0.5 bg-slate-100 rounded text-slate-600 font-semibold">ID: SP-99231</span>
+<span>32 Years Old</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Active Engagement</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-purple-50 border border-purple-200 rounded-xl px-5 py-3 flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-purple-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-700 text-[20px]">park</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-purple-500 uppercase tracking-wider">Active Prescription</p>
+<p class="text-sm font-bold text-purple-800">Community Garden Engagement</p>
+</div>
+</div>
+<button onclick="document.getElementById('modifyPrescriptionModal').classList.add('hidden')" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-400">close</span>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Modal Body -->
+<div class="flex-1 overflow-y-auto">
+<div class="flex">
+<!-- Left: Calendar Planner -->
+<div class="flex-1 p-8">
+<div class="flex items-center justify-between mb-2">
+<div>
+<h3 class="text-lg font-bold font-headline text-on-surface">Monthly Social Planner</h3>
+<p class="text-xs text-slate-400 mt-0.5">Scheduling and interaction frequency for April 2026</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition text-slate-400">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<span class="text-sm font-bold text-on-surface min-w-[100px] text-center">April 2026</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition text-slate-400">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+
+<!-- Calendar Grid -->
+<div class="mt-4 border border-slate-200 rounded-xl overflow-hidden">
+<!-- Day Headers -->
+<div class="grid grid-cols-7 bg-slate-50 border-b border-slate-200">
+<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Mon</div>
+<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Tue</div>
+<div class="px-3 py-2.5 text-[11px] font-bold text-green-600 uppercase text-center">Wed</div>
+<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Thu</div>
+<div class="px-3 py-2.5 text-[11px] font-bold text-purple-600 uppercase text-center">Fri</div>
+<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Sat</div>
+<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Sun</div>
+</div>
+<!-- Week 1: Mar 30-31, Apr 1-5 -->
+<div class="grid grid-cols-7 border-b border-slate-100">
+<div class="p-2 h-20 text-xs text-slate-300 border-r border-slate-100">30</div>
+<div class="p-2 h-20 text-xs text-slate-300 border-r border-slate-100">31</div>
+<div class="p-2 h-20 text-xs text-green-700 font-bold border-r border-slate-100">1</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">2</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">3<div class="mt-1 px-1.5 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">directions_walk</span> Walk</div></div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">4</div>
+<div class="p-2 h-20 text-xs text-slate-500">5</div>
+</div>
+<!-- Week 2: Apr 6-12 -->
+<div class="grid grid-cols-7 border-b border-slate-100">
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">6</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">7</div>
+<div class="p-2 h-20 text-xs text-green-700 font-bold border-r border-slate-100">8<div class="mt-1 px-1.5 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">yard</span> Garden</div></div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">9</div>
+<div class="p-2 h-20 text-xs text-purple-700 font-bold border-r border-slate-100">10<div class="mt-1 px-1.5 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">coffee</span> Cafe Meet</div></div>
+<div class="p-2 h-20 text-xs text-purple-700 font-bold border-r border-slate-100">11</div>
+<div class="p-2 h-20 text-xs text-slate-500 bg-purple-50/50 ring-2 ring-inset ring-purple-300 rounded">12</div>
+</div>
+<!-- Week 3: Apr 13-19 -->
+<div class="grid grid-cols-7 border-b border-slate-100">
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">13</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">14</div>
+<div class="p-2 h-20 text-xs text-green-700 font-bold border-r border-slate-100">15<div class="mt-1 px-1.5 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">directions_walk</span> Walk</div></div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">16<div class="mt-1 px-1.5 py-0.5 bg-yellow-100 text-yellow-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">build</span> Workshop</div></div>
+<div class="p-2 h-20 text-xs text-purple-700 font-bold border-r border-slate-100">17</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">18</div>
+<div class="p-2 h-20 text-xs text-slate-500">19</div>
+</div>
+<!-- Week 4: Apr 20-26 -->
+<div class="grid grid-cols-7 border-b border-slate-100">
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">20</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">21</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">22</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">23</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">24</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">25</div>
+<div class="p-2 h-20 text-xs text-slate-500">26</div>
+</div>
+<!-- Week 5: Apr 27-30, May 1-3 -->
+<div class="grid grid-cols-7">
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">27</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">28</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">29</div>
+<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">30</div>
+<div class="p-2 h-20 text-xs text-slate-300 border-r border-slate-100">1</div>
+<div class="p-2 h-20 text-xs text-slate-300 border-r border-slate-100">2</div>
+<div class="p-2 h-20 text-xs text-slate-300">3</div>
+</div>
+</div>
+
+<!-- Calendar Actions -->
+<div class="flex items-center justify-between mt-5">
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-1.5 px-4 py-2 bg-green-600 text-white rounded-lg text-xs font-bold hover:bg-green-700 transition">
+<span class="material-symbols-outlined text-[16px]">add</span> Add Event
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg text-xs font-bold hover:bg-slate-50 transition">
+<span class="material-symbols-outlined text-[16px]">event_repeat</span> Reschedule
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-4 py-2 text-red-500 text-xs font-bold hover:bg-red-50 rounded-lg transition">
+<span class="material-symbols-outlined text-[16px]">delete</span> Delete Event
+</button>
+</div>
+</div>
+
+<!-- Right Sidebar: Certified Social Hubs -->
+<div class="w-72 border-l border-slate-100 bg-slate-50/50 p-6 space-y-5">
+<div>
+<h3 class="text-sm font-bold font-headline text-on-surface">Certified Social Hubs</h3>
+<p class="text-[11px] text-slate-400 mt-0.5">Drag spaces into the planner to schedule interactions.</p>
+</div>
+
+<!-- Hub 1 -->
+<div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100 flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-green-700 text-[20px]">park</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-on-surface">Green Root Garden</h4>
+<p class="text-[11px] text-slate-400 mt-0.5">0.4 miles &bull; Botanical Therapy</p>
+<span class="inline-block mt-1.5 px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded">VERIFIED SPACE</span>
+</div>
+<button class="text-slate-300 hover:text-slate-400"><span class="material-symbols-outlined text-[16px]">drag_indicator</span></button>
+</div>
+
+<!-- Hub 2 -->
+<div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100 flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-purple-700 text-[20px]">menu_book</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-on-surface">Riverside Library</h4>
+<p class="text-[11px] text-slate-400 mt-0.5">1.2 miles &bull; Quiet Engagement</p>
+<span class="inline-block mt-1.5 px-2 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded">VERIFIED SPACE</span>
+</div>
+<button class="text-slate-300 hover:text-slate-400"><span class="material-symbols-outlined text-[16px]">drag_indicator</span></button>
+</div>
+
+<!-- Hub 3 -->
+<div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100 flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-amber-700 text-[20px]">coffee</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold text-on-surface">Bean & Brew Social</h4>
+<p class="text-[11px] text-slate-400 mt-0.5">0.8 miles &bull; Community Hub</p>
+<span class="inline-block mt-1.5 px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded">VERIFIED SPACE</span>
+</div>
+<button class="text-slate-300 hover:text-slate-400"><span class="material-symbols-outlined text-[16px]">drag_indicator</span></button>
+</div>
+
+<!-- Local Hub Map Preview -->
+<div class="rounded-xl overflow-hidden border border-slate-200 bg-gradient-to-br from-green-800 to-green-950 p-4 relative">
+<p class="text-[10px] font-bold text-green-300 uppercase tracking-wider">Safe Walk Zone</p>
+<p class="text-sm font-extrabold text-white font-headline mt-0.5">LOCAL HUB</p>
+<a href="map-analytics.html" class="inline-block mt-3 text-[11px] font-bold text-green-300 underline underline-offset-2 hover:text-white transition">View full network map</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="flex justify-between items-center px-8 py-5 bg-white border-t border-slate-100">
+<div class="text-xs text-slate-400">Last modified: Apr 8, 2026</div>
+<div class="flex items-center gap-4">
+<button onclick="document.getElementById('modifyPrescriptionModal').classList.add('hidden')" class="px-6 py-2.5 text-sm font-bold text-slate-500 hover:bg-slate-100 rounded-lg transition-colors">
+Cancel
+</button>
+<button id="saveModifyBtn" onclick="saveModification()" class="px-8 py-2.5 bg-gradient-to-br from-purple-700 to-purple-900 text-sm font-bold text-white rounded-lg shadow-lg hover:shadow-purple-500/20 transition-all min-w-[160px] flex items-center justify-center gap-2">
+Save Changes
+</button>
+</div>
+</footer>
+</div>
+</div>
+
+<!-- New Prescription Modal -->
+<div id="newPrescriptionModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-[2px] p-4 md:p-8">
+<div class="bg-white w-full max-w-5xl max-h-[90vh] rounded-xl flex flex-col shadow-2xl overflow-hidden">
+<!-- Header -->
+<header class="flex justify-between items-center px-8 py-6 bg-white border-b border-slate-100">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-purple-100 rounded-lg">
+<span class="material-symbols-outlined text-purple-700">description</span>
+</div>
+<div>
+<h2 class="text-xl font-bold font-headline text-on-surface">Create New Social Prescription</h2>
+<p class="text-xs font-medium text-slate-500">Patient Reference: EL-2026-0892 | Elena Lira</p>
+</div>
+</div>
+<button onclick="document.getElementById('newPrescriptionModal').classList.add('hidden')" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-400">close</span>
+</button>
+</header>
+
+<div class="flex-1 overflow-y-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+<!-- Left Sidebar -->
+<div class="lg:col-span-4 bg-slate-50 p-8 space-y-8">
+<!-- Prescription Selection -->
+<section>
+<h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Prescription Category</h3>
+<div class="space-y-3">
+<button class="w-full flex items-center p-4 rounded-lg bg-white shadow-sm border-l-4 border-purple-700 transition-all">
+<span class="material-symbols-outlined mr-3 text-purple-700">groups</span>
+<span class="text-sm font-semibold">Social Connection</span>
+</button>
+<button class="w-full flex items-center p-4 rounded-lg hover:bg-slate-100 transition-all">
+<span class="material-symbols-outlined mr-3 text-slate-400">directions_run</span>
+<span class="text-sm font-medium text-slate-500">Physical Activity</span>
+</button>
+<button class="w-full flex items-center p-4 rounded-lg hover:bg-slate-100 transition-all">
+<span class="material-symbols-outlined mr-3 text-slate-400">psychology</span>
+<span class="text-sm font-medium text-slate-500">Mental Wellness</span>
+</button>
+</div>
+</section>
+
+<!-- Monthly Goals Checklist -->
+<section>
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xs font-bold uppercase tracking-widest text-slate-500">Needs for this month</h3>
+<span class="text-[10px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-bold">Priority</span>
+</div>
+<div class="bg-white rounded-xl p-4 space-y-4 shadow-sm">
+<label class="flex items-start gap-3 cursor-pointer">
+<input checked type="checkbox" class="mt-1 w-4 h-4 rounded text-purple-700 focus:ring-purple-500 border-slate-300"/>
+<div class="flex flex-col">
+<span class="text-sm font-semibold">4x community events</span>
+<span class="text-[11px] text-slate-500">Local gathering or interest group</span>
+</div>
+</label>
+<label class="flex items-start gap-3 cursor-pointer">
+<input checked type="checkbox" class="mt-1 w-4 h-4 rounded text-purple-700 focus:ring-purple-500 border-slate-300"/>
+<div class="flex flex-col">
+<span class="text-sm font-semibold">10x morning walks</span>
+<span class="text-[11px] text-slate-500">Minimum 20 mins cardiovascular</span>
+</div>
+</label>
+<label class="flex items-start gap-3 cursor-pointer">
+<input type="checkbox" class="mt-1 w-4 h-4 rounded text-purple-700 focus:ring-purple-500 border-slate-300"/>
+<div class="flex flex-col">
+<span class="text-sm font-semibold">2x library workshops</span>
+<span class="text-[11px] text-slate-500">Creative or digital skill learning</span>
+</div>
+</label>
+</div>
+</section>
+
+<!-- Advisor Badge -->
+<div class="p-4 bg-purple-50 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-purple-700">verified_user</span>
+<span class="text-xs font-semibold text-purple-700">SmartCare Space Verified Protocol</span>
+</div>
+</div>
+
+<!-- Right Main Area -->
+<div class="lg:col-span-8 p-8 space-y-10">
+<!-- Form Fields -->
+<section class="grid grid-cols-2 gap-6">
+<div class="col-span-2">
+<label class="text-xs font-bold text-slate-500 mb-2 block">Prescription Name</label>
+<input class="w-full border-b-2 border-slate-300 bg-transparent py-2 text-lg font-headline font-semibold focus:border-purple-700 focus:ring-0 outline-none transition-all" type="text" value="Community Garden Engagement"/>
+</div>
+<div>
+<label class="text-xs font-bold text-slate-500 mb-2 block">Frequency</label>
+<select class="w-full border-b border-slate-300 bg-transparent py-2 text-sm font-medium focus:border-purple-700 focus:ring-0 outline-none">
+<option>Twice Weekly</option>
+<option>Daily</option>
+<option>Weekly</option>
+<option>Monthly</option>
+</select>
+</div>
+<div>
+<label class="text-xs font-bold text-slate-500 mb-2 block">Duration</label>
+<select class="w-full border-b border-slate-300 bg-transparent py-2 text-sm font-medium focus:border-purple-700 focus:ring-0 outline-none">
+<option>3 Months</option>
+<option>6 Months</option>
+<option>Indefinite</option>
+</select>
+</div>
+</section>
+
+<!-- Social Planner Calendar -->
+<section>
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold font-headline">Social Planner</h3>
+<div class="flex gap-4">
+<button class="flex items-center text-xs font-bold text-purple-700">
+<span class="material-symbols-outlined mr-1">chevron_left</span> Previous
+</button>
+<span class="text-sm font-bold">April 2026</span>
+<button class="flex items-center text-xs font-bold text-purple-700">
+Next <span class="material-symbols-outlined ml-1">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-50 rounded-xl p-6">
+<div class="grid grid-cols-7 gap-1 text-center mb-4">
+<div class="text-[10px] font-bold text-slate-400 uppercase">Mon</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase">Tue</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase">Wed</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase">Thu</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase">Fri</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase">Sat</div>
+<div class="text-[10px] font-bold text-slate-400 uppercase">Sun</div>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Apr 2026 starts on Wed -->
+<div class="h-14 flex items-center justify-center text-sm font-medium text-slate-300">30</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium text-slate-300">31</div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">1<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">2</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">3</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">4</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">5</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">6</div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-purple-50 rounded-lg">7<div class="w-1 h-1 bg-purple-400 rounded-full mt-1"></div></div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">8<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">9</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">10</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">11</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium bg-purple-100 rounded-lg ring-2 ring-purple-400">12</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">13</div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-purple-50 rounded-lg">14<div class="w-1 h-1 bg-purple-400 rounded-full mt-1"></div></div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">15<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">16</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">17</div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-amber-50 rounded-lg">18<div class="w-1 h-1 bg-amber-500 rounded-full mt-1"></div></div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">19</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">20</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">21</div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">22<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">23</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">24</div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">25</div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-amber-50 rounded-lg">26<div class="w-1 h-1 bg-amber-500 rounded-full mt-1"></div></div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">27</div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-purple-50 rounded-lg">28<div class="w-1 h-1 bg-purple-400 rounded-full mt-1"></div></div>
+<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">29<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
+<div class="h-14 flex items-center justify-center text-sm font-medium">30</div>
+</div>
+</div>
+<div class="mt-4 flex gap-4 text-[11px] font-bold text-slate-500">
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-purple-700"></span> Community Garden</div>
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-purple-400"></span> Health Walk</div>
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Workshop</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="flex justify-end gap-4 px-8 py-6 bg-white border-t border-slate-100">
+<button onclick="document.getElementById('newPrescriptionModal').classList.add('hidden')" class="px-6 py-2.5 text-sm font-bold text-slate-500 hover:bg-slate-100 rounded-lg transition-colors">
+Cancel
+</button>
+<button id="assignBtn" onclick="assignPrescription()" class="px-8 py-2.5 bg-gradient-to-br from-purple-700 to-purple-900 text-sm font-bold text-white rounded-lg shadow-lg hover:shadow-purple-500/20 transition-all min-w-[180px] flex items-center justify-center gap-2">
+Assign Prescription
+</button>
+</footer>
+</div>
+</div>
+
+<script>
+// Close modal when clicking the backdrop
+document.getElementById('newPrescriptionModal').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.add('hidden');
+});
+
+function assignPrescription() {
+  var btn = document.getElementById('assignBtn');
+  btn.disabled = true;
+  btn.classList.add('opacity-80', 'cursor-not-allowed');
+  // Show spinner
+  btn.innerHTML = '<svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="3" opacity="0.3"/><path d="M12 2a10 10 0 0 1 10 10" stroke="white" stroke-width="3" stroke-linecap="round"/></svg> Processing...';
+
+  // After 2s show checkmark
+  setTimeout(function() {
+    btn.classList.remove('from-purple-700', 'to-purple-900');
+    btn.classList.add('from-green-500', 'to-green-600');
+    btn.innerHTML = '<svg class="checkmark-circle" width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="white" opacity="0.25"/><path class="checkmark-path" d="M6 12.5l3.5 3.5 8.5-8.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Approved!';
+
+    // After 1.5s close modal
+    setTimeout(function() {
+      document.getElementById('newPrescriptionModal').classList.add('hidden');
+      // Reset button state
+      btn.disabled = false;
+      btn.classList.remove('opacity-80', 'cursor-not-allowed', 'from-green-500', 'to-green-600');
+      btn.classList.add('from-purple-700', 'to-purple-900');
+      btn.innerHTML = 'Assign Prescription';
+    }, 1500);
+  }, 2000);
+}
+
+// Modify Prescription modal backdrop close
+document.getElementById('modifyPrescriptionModal').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.add('hidden');
+});
+
+function saveModification() {
+  var btn = document.getElementById('saveModifyBtn');
+  btn.disabled = true;
+  btn.classList.add('opacity-80', 'cursor-not-allowed');
+  btn.innerHTML = '<svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="3" opacity="0.3"/><path d="M12 2a10 10 0 0 1 10 10" stroke="white" stroke-width="3" stroke-linecap="round"/></svg> Saving...';
+
+  setTimeout(function() {
+    btn.classList.remove('from-purple-700', 'to-purple-900');
+    btn.classList.add('from-green-500', 'to-green-600');
+    btn.innerHTML = '<svg class="checkmark-circle" width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="white" opacity="0.25"/><path class="checkmark-path" d="M6 12.5l3.5 3.5 8.5-8.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Saved!';
+
+    setTimeout(function() {
+      document.getElementById('modifyPrescriptionModal').classList.add('hidden');
+      btn.disabled = false;
+      btn.classList.remove('opacity-80', 'cursor-not-allowed', 'from-green-500', 'to-green-600');
+      btn.classList.add('from-purple-700', 'to-purple-900');
+      btn.innerHTML = 'Save Changes';
+    }, 1500);
+  }, 2000);
+}
+</script>
 </body></html>
