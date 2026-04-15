@@ -376,205 +376,229 @@ View Full Bio <span class="material-symbols-outlined text-[16px]">open_in_new</s
 
 <!-- Modify Prescription Modal -->
 <div id="modifyPrescriptionModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-[2px] p-4 md:p-8">
-<div class="bg-white w-full max-w-6xl max-h-[92vh] rounded-xl flex flex-col shadow-2xl overflow-hidden">
+<div class="bg-white w-full max-w-5xl max-h-[92vh] rounded-xl flex flex-col shadow-2xl overflow-hidden">
 
-<!-- Header with Breadcrumb -->
-<header class="px-8 py-5 bg-white border-b border-slate-100">
-<div class="flex items-center justify-between">
+<!-- Header: Patient Identity -->
+<header class="flex items-center justify-between px-8 py-6 bg-white border-b border-slate-100">
+<div class="flex items-center gap-6">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center text-xl font-bold text-purple-700 ring-2 ring-purple-200">EL</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-0.5 rounded-full">
+<span class="material-symbols-outlined text-xs">verified</span>
+</div>
+</div>
 <div>
-<nav class="flex items-center gap-2 text-xs text-slate-400 mb-3">
-<span>Medi8 Pulse</span>
-<span class="material-symbols-outlined text-[14px]">chevron_right</span>
-<span>Prescriptions</span>
-<span class="material-symbols-outlined text-[14px]">chevron_right</span>
-<span class="text-slate-600">Elena Lira</span>
-<span class="material-symbols-outlined text-[14px]">chevron_right</span>
-<span class="text-purple-700 font-semibold">Modify Prescription</span>
-</nav>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-lg font-bold text-purple-700">EL</div>
-<div>
-<h2 class="text-xl font-bold font-headline text-on-surface">Elena Lira</h2>
-<div class="flex items-center gap-3 text-xs text-slate-500 mt-0.5">
-<span class="px-2 py-0.5 bg-slate-100 rounded text-slate-600 font-semibold">ID: SP-99231</span>
-<span>32 Years Old</span>
-<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Active Engagement</span>
-</div>
-</div>
-</div>
-</div>
 <div class="flex items-center gap-3">
-<div class="bg-purple-50 border border-purple-200 rounded-xl px-5 py-3 flex items-center gap-3">
-<div class="w-9 h-9 rounded-lg bg-purple-100 flex items-center justify-center">
-<span class="material-symbols-outlined text-purple-700 text-[20px]">park</span>
+<h2 class="font-headline font-extrabold text-2xl text-on-surface tracking-tight">Elena Lira</h2>
+<span class="px-3 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold uppercase tracking-wider rounded-full">Active Plan</span>
 </div>
-<div>
-<p class="text-[10px] font-bold text-purple-500 uppercase tracking-wider">Active Prescription</p>
-<p class="text-sm font-bold text-purple-800">Community Garden Engagement</p>
+<p class="text-sm text-slate-500 flex items-center gap-2 mt-0.5">
+<span class="font-mono text-xs opacity-60">ID: SP-99231</span>
+<span class="h-1 w-1 rounded-full bg-slate-300"></span>
+<span>Care Level: Moderate Social Integration</span>
+</p>
 </div>
 </div>
 <button onclick="document.getElementById('modifyPrescriptionModal').classList.add('hidden')" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
 <span class="material-symbols-outlined text-slate-400">close</span>
 </button>
-</div>
-</div>
 </header>
 
-<!-- Modal Body -->
-<div class="flex-1 overflow-y-auto">
-<div class="flex">
-<!-- Left: Calendar Planner -->
-<div class="flex-1 p-8">
-<div class="flex items-center justify-between mb-2">
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto p-8 bg-surface">
+
+<!-- Section: Prescription Domains -->
+<section class="mb-12">
+<div class="flex items-end justify-between mb-6">
 <div>
-<h3 class="text-lg font-bold font-headline text-on-surface">Monthly Social Planner</h3>
-<p class="text-xs text-slate-400 mt-0.5">Scheduling and interaction frequency for April 2026</p>
-</div>
-<div class="flex items-center gap-3">
-<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition text-slate-400">
-<span class="material-symbols-outlined text-[20px]">chevron_left</span>
-</button>
-<span class="text-sm font-bold text-on-surface min-w-[100px] text-center">April 2026</span>
-<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition text-slate-400">
-<span class="material-symbols-outlined text-[20px]">chevron_right</span>
-</button>
+<h3 class="font-headline font-bold text-lg text-on-surface">Prescription Domains</h3>
+<p class="text-sm text-slate-500">Select the health domains to target in this cycle.</p>
 </div>
 </div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Social -->
+<div class="group relative p-6 rounded-xl bg-white border border-slate-200 hover:border-purple-400 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-700">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<input checked class="rounded text-purple-700 focus:ring-purple-500 h-5 w-5" type="checkbox"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">Social Health</h4>
+<p class="text-xs text-slate-500 leading-relaxed mb-4">Focused on reducing isolation through community hub integration and peer engagement groups.</p>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Peer groups</span>
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Local hubs</span>
+</div>
+</div>
+<!-- Card 2: Physical -->
+<div class="group relative p-6 rounded-xl bg-white border border-slate-200 hover:border-purple-400 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center text-amber-700">
+<span class="material-symbols-outlined">directions_walk</span>
+</div>
+<input class="rounded text-purple-700 focus:ring-purple-500 h-5 w-5" type="checkbox"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">Physical Vitality</h4>
+<p class="text-xs text-slate-500 leading-relaxed mb-4">Low-impact mobility exercises, outdoor walking sessions, and therapeutic gardening.</p>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Mobility</span>
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Green space</span>
+</div>
+</div>
+<!-- Card 3: Mental -->
+<div class="group relative p-6 rounded-xl bg-white border border-slate-200 hover:border-purple-400 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center text-pink-700">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<input checked class="rounded text-purple-700 focus:ring-purple-500 h-5 w-5" type="checkbox"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">Cognitive Agility</h4>
+<p class="text-xs text-slate-500 leading-relaxed mb-4">Workshops for creative expression, memory stimulation, and mindfulness-based interactions.</p>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Creativity</span>
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Mindfulness</span>
+</div>
+</div>
+</div>
+</section>
 
-<!-- Calendar Grid -->
-<div class="mt-4 border border-slate-200 rounded-xl overflow-hidden">
-<!-- Day Headers -->
-<div class="grid grid-cols-7 bg-slate-50 border-b border-slate-200">
-<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Mon</div>
-<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Tue</div>
-<div class="px-3 py-2.5 text-[11px] font-bold text-green-600 uppercase text-center">Wed</div>
-<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Thu</div>
-<div class="px-3 py-2.5 text-[11px] font-bold text-purple-600 uppercase text-center">Fri</div>
-<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Sat</div>
-<div class="px-3 py-2.5 text-[11px] font-bold text-slate-400 uppercase text-center">Sun</div>
-</div>
-<!-- Week 1: Mar 30-31, Apr 1-5 -->
-<div class="grid grid-cols-7 border-b border-slate-100">
-<div class="p-2 h-20 text-xs text-slate-300 border-r border-slate-100">30</div>
-<div class="p-2 h-20 text-xs text-slate-300 border-r border-slate-100">31</div>
-<div class="p-2 h-20 text-xs text-green-700 font-bold border-r border-slate-100">1</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">2</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">3<div class="mt-1 px-1.5 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">directions_walk</span> Walk</div></div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">4</div>
-<div class="p-2 h-20 text-xs text-slate-500">5</div>
-</div>
-<!-- Week 2: Apr 6-12 -->
-<div class="grid grid-cols-7 border-b border-slate-100">
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">6</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">7</div>
-<div class="p-2 h-20 text-xs text-green-700 font-bold border-r border-slate-100">8<div class="mt-1 px-1.5 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">yard</span> Garden</div></div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">9</div>
-<div class="p-2 h-20 text-xs text-purple-700 font-bold border-r border-slate-100">10<div class="mt-1 px-1.5 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">coffee</span> Cafe Meet</div></div>
-<div class="p-2 h-20 text-xs text-purple-700 font-bold border-r border-slate-100">11</div>
-<div class="p-2 h-20 text-xs text-slate-500 bg-purple-50/50 ring-2 ring-inset ring-purple-300 rounded">12</div>
-</div>
-<!-- Week 3: Apr 13-19 -->
-<div class="grid grid-cols-7 border-b border-slate-100">
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">13</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">14</div>
-<div class="p-2 h-20 text-xs text-green-700 font-bold border-r border-slate-100">15<div class="mt-1 px-1.5 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">directions_walk</span> Walk</div></div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">16<div class="mt-1 px-1.5 py-0.5 bg-yellow-100 text-yellow-700 text-[10px] font-bold rounded"><span class="material-symbols-outlined text-[10px]">build</span> Workshop</div></div>
-<div class="p-2 h-20 text-xs text-purple-700 font-bold border-r border-slate-100">17</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">18</div>
-<div class="p-2 h-20 text-xs text-slate-500">19</div>
-</div>
-<!-- Week 4: Apr 20-26 -->
-<div class="grid grid-cols-7 border-b border-slate-100">
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">20</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">21</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">22</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">23</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">24</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">25</div>
-<div class="p-2 h-20 text-xs text-slate-500">26</div>
-</div>
-<!-- Week 5: Apr 27-30, May 1-3 -->
-<div class="grid grid-cols-7">
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">27</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">28</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">29</div>
-<div class="p-2 h-20 text-xs text-slate-500 border-r border-slate-100">30</div>
-<div class="p-2 h-20 text-xs text-slate-300 border-r border-slate-100">1</div>
-<div class="p-2 h-20 text-xs text-slate-300 border-r border-slate-100">2</div>
-<div class="p-2 h-20 text-xs text-slate-300">3</div>
-</div>
-</div>
-
-<!-- Calendar Actions -->
-<div class="flex items-center justify-between mt-5">
-<div class="flex items-center gap-3">
-<button class="flex items-center gap-1.5 px-4 py-2 bg-green-600 text-white rounded-lg text-xs font-bold hover:bg-green-700 transition">
-<span class="material-symbols-outlined text-[16px]">add</span> Add Event
-</button>
-<button class="flex items-center gap-1.5 px-4 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg text-xs font-bold hover:bg-slate-50 transition">
-<span class="material-symbols-outlined text-[16px]">event_repeat</span> Reschedule
-</button>
-</div>
-<button class="flex items-center gap-1.5 px-4 py-2 text-red-500 text-xs font-bold hover:bg-red-50 rounded-lg transition">
-<span class="material-symbols-outlined text-[16px]">delete</span> Delete Event
-</button>
-</div>
-</div>
-
-<!-- Right Sidebar: Certified Social Hubs -->
-<div class="w-72 border-l border-slate-100 bg-slate-50/50 p-6 space-y-5">
+<!-- Section: Monthly Goal Configuration -->
+<section class="mb-12">
+<div class="bg-slate-50 rounded-xl p-8 border border-slate-100">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-6">Monthly Goal Configuration</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-6">
 <div>
-<h3 class="text-sm font-bold font-headline text-on-surface">Certified Social Hubs</h3>
-<p class="text-[11px] text-slate-400 mt-0.5">Drag spaces into the planner to schedule interactions.</p>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Target Frequency</label>
+<div class="flex items-center gap-4">
+<input class="w-20 bg-white border-0 border-b-2 border-slate-300 focus:border-purple-700 focus:ring-0 font-headline font-bold text-xl text-purple-700" type="text" value="4x"/>
+<span class="text-sm font-medium text-slate-500">Community Events per month</span>
 </div>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Priority Level</label>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-full border border-slate-200 text-xs font-semibold bg-white hover:bg-slate-50 transition-colors">Routine</button>
+<button class="px-4 py-2 rounded-full border-2 border-purple-700 text-purple-700 bg-purple-50 text-xs font-bold">High Priority</button>
+<button class="px-4 py-2 rounded-full border border-slate-200 text-xs font-semibold bg-white hover:bg-slate-50 transition-colors">Critical</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg p-6 shadow-sm border border-slate-100">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-purple-700" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<h4 class="text-sm font-bold text-on-surface">Projected Impact</h4>
+</div>
+<p class="text-xs text-slate-500 mb-4">Based on Elena's history, 4 events/month is expected to improve her Wellbeing Index by 12%.</p>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full w-[65%] bg-gradient-to-r from-purple-700 to-purple-400"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-slate-500 font-medium">
+<span>Current: 52</span>
+<span>Target: 64</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-<!-- Hub 1 -->
-<div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100 flex items-start gap-3">
-<div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-green-700 text-[20px]">park</span>
+<!-- Section: Weekly Activities Strategy -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline font-bold text-lg text-on-surface">Weekly Activities Strategy</h3>
+<button class="text-purple-700 text-sm font-bold flex items-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-sm">add_circle</span> Add Activity
+</button>
 </div>
-<div class="flex-1 min-w-0">
-<h4 class="text-sm font-bold text-on-surface">Green Root Garden</h4>
-<p class="text-[11px] text-slate-400 mt-0.5">0.4 miles &bull; Botanical Therapy</p>
-<span class="inline-block mt-1.5 px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold rounded">VERIFIED SPACE</span>
+<div class="space-y-4">
+<!-- Activity 1 -->
+<div class="bg-white p-6 rounded-xl border border-slate-100 flex flex-col md:flex-row gap-6 items-start hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-lg bg-green-100 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-700 text-3xl">park</span>
 </div>
-<button class="text-slate-300 hover:text-slate-400"><span class="material-symbols-outlined text-[16px]">drag_indicator</span></button>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between">
+<div>
+<h4 class="font-bold text-on-surface">Botanical Garden Walk</h4>
+<p class="text-xs text-slate-500">Guided sensory experience for mobility and social mingling.</p>
 </div>
+<span class="material-symbols-outlined text-slate-300 cursor-pointer hover:text-red-500 transition-colors">delete</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Time</label>
+<div class="text-xs font-medium text-on-surface">Tue, 10:30 AM</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Location</label>
+<div class="text-xs font-medium text-purple-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Green City Hub
+</div>
+</div>
+<div class="col-span-2">
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Advisor Notes</label>
+<input class="w-full text-xs bg-transparent border-0 border-b border-slate-200 focus:ring-0 focus:border-purple-700 px-0 pb-1 italic text-slate-500" placeholder="Ensure transport arrives 15 mins early..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity 2 -->
+<div class="bg-white p-6 rounded-xl border border-slate-100 flex flex-col md:flex-row gap-6 items-start hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-lg bg-amber-100 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-700 text-3xl">coffee</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between">
+<div>
+<h4 class="font-bold text-on-surface">Morning Coffee &amp; Conversation</h4>
+<p class="text-xs text-slate-500">Structured peer-to-peer discussion in a relaxed setting.</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 cursor-pointer hover:text-red-500 transition-colors">delete</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Time</label>
+<div class="text-xs font-medium text-on-surface">Fri, 09:00 AM</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Location</label>
+<div class="text-xs font-medium text-purple-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Riverside Center
+</div>
+</div>
+<div class="col-span-2">
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Advisor Notes</label>
+<input class="w-full text-xs bg-transparent border-0 border-b border-slate-200 focus:ring-0 focus:border-purple-700 px-0 pb-1 italic text-slate-500" placeholder="Pair with Maria for initial introduction..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-<!-- Hub 2 -->
-<div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100 flex items-start gap-3">
-<div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-purple-700 text-[20px]">menu_book</span>
+<!-- Section: Clinical Notes -->
+<section class="mb-8">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-4">Advisor Clinical Observations</h3>
+<div class="relative">
+<textarea class="w-full bg-white rounded-xl border border-slate-200 focus:border-purple-700 focus:ring-4 focus:ring-purple-500/5 p-6 text-sm text-on-surface placeholder:text-slate-400" placeholder="Add specific guidance, risk assessments, or observations to accompany this prescription..." rows="4"></textarea>
+<div class="absolute bottom-4 right-4 flex items-center gap-2">
+<span class="text-[10px] font-bold text-slate-500 uppercase">Smart Assist</span>
+<div class="w-2 h-2 rounded-full bg-purple-700 animate-pulse"></div>
 </div>
-<div class="flex-1 min-w-0">
-<h4 class="text-sm font-bold text-on-surface">Riverside Library</h4>
-<p class="text-[11px] text-slate-400 mt-0.5">1.2 miles &bull; Quiet Engagement</p>
-<span class="inline-block mt-1.5 px-2 py-0.5 bg-purple-100 text-purple-700 text-[10px] font-bold rounded">VERIFIED SPACE</span>
 </div>
-<button class="text-slate-300 hover:text-slate-400"><span class="material-symbols-outlined text-[16px]">drag_indicator</span></button>
-</div>
+</section>
 
-<!-- Hub 3 -->
-<div class="bg-white rounded-xl p-4 shadow-sm border border-slate-100 flex items-start gap-3">
-<div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-amber-700 text-[20px]">coffee</span>
-</div>
-<div class="flex-1 min-w-0">
-<h4 class="text-sm font-bold text-on-surface">Bean & Brew Social</h4>
-<p class="text-[11px] text-slate-400 mt-0.5">0.8 miles &bull; Community Hub</p>
-<span class="inline-block mt-1.5 px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded">VERIFIED SPACE</span>
-</div>
-<button class="text-slate-300 hover:text-slate-400"><span class="material-symbols-outlined text-[16px]">drag_indicator</span></button>
-</div>
-
-
-</div>
-</div>
+<div class="h-4"></div>
 </div>
 
 <!-- Footer -->
-<footer class="flex justify-between items-center px-8 py-5 bg-white border-t border-slate-100">
-<div class="text-xs text-slate-400">Last modified: Apr 8, 2026</div>
+<footer class="px-8 py-5 bg-white border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-[11px] font-semibold uppercase tracking-widest">End-to-End Encrypted Portal</span>
+</div>
 <div class="flex items-center gap-4">
 <button onclick="document.getElementById('modifyPrescriptionModal').classList.add('hidden')" class="px-6 py-2.5 text-sm font-bold text-slate-500 hover:bg-slate-100 rounded-lg transition-colors">
 Cancel
@@ -589,16 +613,27 @@ Save Changes
 
 <!-- New Prescription Modal -->
 <div id="newPrescriptionModal" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-black/40 backdrop-blur-[2px] p-4 md:p-8">
-<div class="bg-white w-full max-w-5xl max-h-[90vh] rounded-xl flex flex-col shadow-2xl overflow-hidden">
-<!-- Header -->
-<header class="flex justify-between items-center px-8 py-6 bg-white border-b border-slate-100">
-<div class="flex items-center gap-4">
-<div class="p-2 bg-purple-100 rounded-lg">
-<span class="material-symbols-outlined text-purple-700">description</span>
+<div class="bg-white w-full max-w-5xl max-h-[92vh] rounded-xl flex flex-col shadow-2xl overflow-hidden">
+
+<!-- Header: Patient Identity -->
+<header class="flex items-center justify-between px-8 py-6 bg-white border-b border-slate-100">
+<div class="flex items-center gap-6">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center text-xl font-bold text-purple-700 ring-2 ring-purple-200">EL</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-0.5 rounded-full">
+<span class="material-symbols-outlined text-xs">add_circle</span>
+</div>
 </div>
 <div>
-<h2 class="text-xl font-bold font-headline text-on-surface">Create New Social Prescription</h2>
-<p class="text-xs font-medium text-slate-500">Patient Reference: EL-2026-0892 | Elena Lira</p>
+<div class="flex items-center gap-3">
+<h2 class="font-headline font-extrabold text-2xl text-on-surface tracking-tight">New Prescription</h2>
+<span class="px-3 py-0.5 bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-wider rounded-full">Draft</span>
+</div>
+<p class="text-sm text-slate-500 flex items-center gap-2 mt-0.5">
+<span class="font-mono text-xs opacity-60">ID: SP-99231</span>
+<span class="h-1 w-1 rounded-full bg-slate-300"></span>
+<span>Elena Lira &mdash; West Park, Seattle</span>
+</p>
 </div>
 </div>
 <button onclick="document.getElementById('newPrescriptionModal').classList.add('hidden')" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
@@ -606,78 +641,40 @@ Save Changes
 </button>
 </header>
 
-<div class="flex-1 overflow-y-auto">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
-<!-- Left Sidebar -->
-<div class="lg:col-span-4 bg-slate-50 p-8 space-y-8">
-<!-- Prescription Selection -->
-<section>
-<h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Prescription Category</h3>
-<div class="space-y-3">
-<button class="w-full flex items-center p-4 rounded-lg bg-white shadow-sm border-l-4 border-purple-700 transition-all">
-<span class="material-symbols-outlined mr-3 text-purple-700">groups</span>
-<span class="text-sm font-semibold">Social Connection</span>
-</button>
-<button class="w-full flex items-center p-4 rounded-lg hover:bg-slate-100 transition-all">
-<span class="material-symbols-outlined mr-3 text-slate-400">directions_run</span>
-<span class="text-sm font-medium text-slate-500">Physical Activity</span>
-</button>
-<button class="w-full flex items-center p-4 rounded-lg hover:bg-slate-100 transition-all">
-<span class="material-symbols-outlined mr-3 text-slate-400">psychology</span>
-<span class="text-sm font-medium text-slate-500">Mental Wellness</span>
-</button>
-</div>
-</section>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto p-8 bg-surface">
 
-<!-- Monthly Goals Checklist -->
-<section>
-<div class="flex justify-between items-center mb-4">
-<h3 class="text-xs font-bold uppercase tracking-widest text-slate-500">Needs for this month</h3>
-<span class="text-[10px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-bold">Priority</span>
-</div>
-<div class="bg-white rounded-xl p-4 space-y-4 shadow-sm">
-<label class="flex items-start gap-3 cursor-pointer">
-<input checked type="checkbox" class="mt-1 w-4 h-4 rounded text-purple-700 focus:ring-purple-500 border-slate-300"/>
-<div class="flex flex-col">
-<span class="text-sm font-semibold">4x community events</span>
-<span class="text-[11px] text-slate-500">Local gathering or interest group</span>
-</div>
-</label>
-<label class="flex items-start gap-3 cursor-pointer">
-<input checked type="checkbox" class="mt-1 w-4 h-4 rounded text-purple-700 focus:ring-purple-500 border-slate-300"/>
-<div class="flex flex-col">
-<span class="text-sm font-semibold">10x morning walks</span>
-<span class="text-[11px] text-slate-500">Minimum 20 mins cardiovascular</span>
-</div>
-</label>
-<label class="flex items-start gap-3 cursor-pointer">
-<input type="checkbox" class="mt-1 w-4 h-4 rounded text-purple-700 focus:ring-purple-500 border-slate-300"/>
-<div class="flex flex-col">
-<span class="text-sm font-semibold">2x library workshops</span>
-<span class="text-[11px] text-slate-500">Creative or digital skill learning</span>
-</div>
-</label>
-</div>
-</section>
-
-<!-- Advisor Badge -->
-<div class="p-4 bg-purple-50 rounded-lg flex items-center gap-3">
-<span class="material-symbols-outlined text-purple-700">verified_user</span>
-<span class="text-xs font-semibold text-purple-700">SmartCare Space Verified Protocol</span>
-</div>
-</div>
-
-<!-- Right Main Area -->
-<div class="lg:col-span-8 p-8 space-y-10">
-<!-- Form Fields -->
-<section class="grid grid-cols-2 gap-6">
-<div class="col-span-2">
-<label class="text-xs font-bold text-slate-500 mb-2 block">Prescription Name</label>
-<input class="w-full border-b-2 border-slate-300 bg-transparent py-2 text-lg font-headline font-semibold focus:border-purple-700 focus:ring-0 outline-none transition-all" type="text" value="Community Garden Engagement"/>
+<!-- Section: Prescription Identity -->
+<section class="mb-12">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-2">Prescription Details</h3>
+<p class="text-sm text-slate-500 mb-6">Define the core identity and parameters of this social prescription.</p>
+<div class="bg-white rounded-xl p-8 border border-slate-100 shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="col-span-1 md:col-span-2">
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Prescription Name</label>
+<input class="w-full border-0 border-b-2 border-slate-300 bg-transparent py-2 text-xl font-headline font-bold text-on-surface focus:border-purple-700 focus:ring-0 outline-none transition-all placeholder:text-slate-300 placeholder:font-normal" type="text" placeholder="e.g. Community Garden Engagement"/>
 </div>
 <div>
-<label class="text-xs font-bold text-slate-500 mb-2 block">Frequency</label>
-<select class="w-full border-b border-slate-300 bg-transparent py-2 text-sm font-medium focus:border-purple-700 focus:ring-0 outline-none">
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Category</label>
+<div class="flex gap-2 flex-wrap">
+<button class="px-4 py-2 rounded-full border-2 border-purple-700 text-purple-700 bg-purple-50 text-xs font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">groups</span> Social Connection
+</button>
+<button class="px-4 py-2 rounded-full border border-slate-200 text-xs font-semibold bg-white hover:bg-slate-50 transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-slate-400">directions_walk</span> Physical Activity
+</button>
+<button class="px-4 py-2 rounded-full border border-slate-200 text-xs font-semibold bg-white hover:bg-slate-50 transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-slate-400">psychology</span> Mental Wellness
+</button>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Start Date</label>
+<input class="w-full border-0 border-b border-slate-300 bg-transparent py-2 text-sm font-medium focus:border-purple-700 focus:ring-0 outline-none" type="date" value="2026-04-21"/>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Frequency</label>
+<select class="w-full border-0 border-b border-slate-300 bg-transparent py-2 text-sm font-medium focus:border-purple-700 focus:ring-0 outline-none">
 <option>Twice Weekly</option>
 <option>Daily</option>
 <option>Weekly</option>
@@ -685,93 +682,261 @@ Save Changes
 </select>
 </div>
 <div>
-<label class="text-xs font-bold text-slate-500 mb-2 block">Duration</label>
-<select class="w-full border-b border-slate-300 bg-transparent py-2 text-sm font-medium focus:border-purple-700 focus:ring-0 outline-none">
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Duration</label>
+<select class="w-full border-0 border-b border-slate-300 bg-transparent py-2 text-sm font-medium focus:border-purple-700 focus:ring-0 outline-none">
 <option>3 Months</option>
 <option>6 Months</option>
+<option>12 Months</option>
 <option>Indefinite</option>
 </select>
 </div>
+</div>
+</div>
 </section>
 
-<!-- Social Planner Calendar -->
-<section>
-<div class="flex items-center justify-between mb-6">
-<h3 class="text-lg font-bold font-headline">Social Planner</h3>
-<div class="flex gap-4">
-<button class="flex items-center text-xs font-bold text-purple-700">
-<span class="material-symbols-outlined mr-1">chevron_left</span> Previous
-</button>
-<span class="text-sm font-bold">April 2026</span>
-<button class="flex items-center text-xs font-bold text-purple-700">
-Next <span class="material-symbols-outlined ml-1">chevron_right</span>
-</button>
+<!-- Section: Health Domain Targets -->
+<section class="mb-12">
+<div class="flex items-end justify-between mb-6">
+<div>
+<h3 class="font-headline font-bold text-lg text-on-surface">Health Domain Targets</h3>
+<p class="text-sm text-slate-500">Select which health domains this prescription should address.</p>
 </div>
 </div>
-<div class="bg-slate-50 rounded-xl p-6">
-<div class="grid grid-cols-7 gap-1 text-center mb-4">
-<div class="text-[10px] font-bold text-slate-400 uppercase">Mon</div>
-<div class="text-[10px] font-bold text-slate-400 uppercase">Tue</div>
-<div class="text-[10px] font-bold text-slate-400 uppercase">Wed</div>
-<div class="text-[10px] font-bold text-slate-400 uppercase">Thu</div>
-<div class="text-[10px] font-bold text-slate-400 uppercase">Fri</div>
-<div class="text-[10px] font-bold text-slate-400 uppercase">Sat</div>
-<div class="text-[10px] font-bold text-slate-400 uppercase">Sun</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Social -->
+<div class="group relative p-6 rounded-xl bg-white border border-slate-200 hover:border-purple-400 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-700">
+<span class="material-symbols-outlined">groups</span>
 </div>
-<div class="grid grid-cols-7 gap-2">
-<!-- Apr 2026 starts on Wed -->
-<div class="h-14 flex items-center justify-center text-sm font-medium text-slate-300">30</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium text-slate-300">31</div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">1<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">2</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">3</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">4</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">5</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">6</div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-purple-50 rounded-lg">7<div class="w-1 h-1 bg-purple-400 rounded-full mt-1"></div></div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">8<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">9</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">10</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">11</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium bg-purple-100 rounded-lg ring-2 ring-purple-400">12</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">13</div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-purple-50 rounded-lg">14<div class="w-1 h-1 bg-purple-400 rounded-full mt-1"></div></div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">15<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">16</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">17</div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-amber-50 rounded-lg">18<div class="w-1 h-1 bg-amber-500 rounded-full mt-1"></div></div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">19</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">20</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">21</div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">22<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">23</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">24</div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">25</div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-amber-50 rounded-lg">26<div class="w-1 h-1 bg-amber-500 rounded-full mt-1"></div></div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">27</div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-purple-50 rounded-lg">28<div class="w-1 h-1 bg-purple-400 rounded-full mt-1"></div></div>
-<div class="h-14 flex flex-col items-center justify-center text-sm font-bold bg-white rounded-lg shadow-sm border-t-2 border-purple-700">29<div class="w-1 h-1 bg-purple-700 rounded-full mt-1"></div></div>
-<div class="h-14 flex items-center justify-center text-sm font-medium">30</div>
+<input checked class="rounded text-purple-700 focus:ring-purple-500 h-5 w-5" type="checkbox"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">Social Health</h4>
+<p class="text-xs text-slate-500 leading-relaxed mb-4">Community hub integration, peer engagement, and structured social interactions.</p>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Peer groups</span>
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Local hubs</span>
 </div>
 </div>
-<div class="mt-4 flex gap-4 text-[11px] font-bold text-slate-500">
-<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-purple-700"></span> Community Garden</div>
-<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-purple-400"></span> Health Walk</div>
-<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Workshop</div>
+<!-- Card 2: Physical -->
+<div class="group relative p-6 rounded-xl bg-white border border-slate-200 hover:border-purple-400 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center text-amber-700">
+<span class="material-symbols-outlined">directions_walk</span>
+</div>
+<input class="rounded text-purple-700 focus:ring-purple-500 h-5 w-5" type="checkbox"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">Physical Vitality</h4>
+<p class="text-xs text-slate-500 leading-relaxed mb-4">Low-impact mobility exercises, outdoor walking sessions, and therapeutic gardening.</p>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Mobility</span>
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Green space</span>
+</div>
+</div>
+<!-- Card 3: Mental -->
+<div class="group relative p-6 rounded-xl bg-white border border-slate-200 hover:border-purple-400 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center text-pink-700">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<input class="rounded text-purple-700 focus:ring-purple-500 h-5 w-5" type="checkbox"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">Cognitive Agility</h4>
+<p class="text-xs text-slate-500 leading-relaxed mb-4">Creative expression workshops, memory stimulation, and mindfulness-based interactions.</p>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Creativity</span>
+<span class="px-2 py-0.5 bg-slate-100 text-[10px] font-medium rounded">Mindfulness</span>
+</div>
+</div>
 </div>
 </section>
+
+<!-- Section: Monthly Goals & Outcome Forecast -->
+<section class="mb-12">
+<div class="bg-slate-50 rounded-xl p-8 border border-slate-100">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-6">Monthly Goals &amp; Outcome Forecast</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-6">
+<!-- Goals Checklist -->
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Target Milestones</label>
+<div class="bg-white rounded-lg p-4 space-y-3 shadow-sm border border-slate-100">
+<label class="flex items-start gap-3 cursor-pointer">
+<input checked type="checkbox" class="mt-0.5 w-4 h-4 rounded text-purple-700 focus:ring-purple-500 border-slate-300"/>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface">4x community events</span>
+<span class="text-[11px] text-slate-500">Local gathering or interest group</span>
+</div>
+</label>
+<label class="flex items-start gap-3 cursor-pointer">
+<input checked type="checkbox" class="mt-0.5 w-4 h-4 rounded text-purple-700 focus:ring-purple-500 border-slate-300"/>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface">10x morning walks</span>
+<span class="text-[11px] text-slate-500">Minimum 20 mins cardiovascular</span>
+</div>
+</label>
+<label class="flex items-start gap-3 cursor-pointer">
+<input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-purple-700 focus:ring-purple-500 border-slate-300"/>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface">2x library workshops</span>
+<span class="text-[11px] text-slate-500">Creative or digital skill learning</span>
+</div>
+</label>
 </div>
 </div>
+<!-- Priority Level -->
+<div>
+<label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Priority Level</label>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-full border border-slate-200 text-xs font-semibold bg-white hover:bg-slate-50 transition-colors">Routine</button>
+<button class="px-4 py-2 rounded-full border-2 border-purple-700 text-purple-700 bg-purple-50 text-xs font-bold">High Priority</button>
+<button class="px-4 py-2 rounded-full border border-slate-200 text-xs font-semibold bg-white hover:bg-slate-50 transition-colors">Critical</button>
+</div>
+</div>
+</div>
+<!-- Outcome Forecast -->
+<div class="bg-white rounded-lg p-6 shadow-sm border border-slate-100">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-purple-700" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<h4 class="text-sm font-bold text-on-surface">Outcome Forecast</h4>
+</div>
+<p class="text-xs text-slate-500 mb-5">Based on Elena's current Wellbeing Index and selected domains, this prescription is projected to achieve the following improvement.</p>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1.5 text-xs">
+<span class="font-medium text-slate-500">Social Isolation Score</span>
+<span class="font-bold text-green-600">-30%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full w-[70%] bg-gradient-to-r from-green-500 to-green-400"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1.5 text-xs">
+<span class="font-medium text-slate-500">Wellbeing Index</span>
+<span class="font-bold text-purple-700">+18%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full w-[60%] bg-gradient-to-r from-purple-700 to-purple-400"></div>
+</div>
+<div class="flex justify-between mt-1.5 text-[10px] text-slate-500 font-medium">
+<span>Current: 52</span>
+<span>Projected: 70</span>
+</div>
+</div>
+</div>
+<div class="mt-5 p-3 bg-purple-50 rounded-lg flex items-start gap-2">
+<span class="material-symbols-outlined text-purple-600 text-sm mt-0.5">info</span>
+<p class="text-[11px] text-purple-700 leading-relaxed">Forecast based on aggregated outcomes from 84 similar patient profiles in the SmartCare network.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Section: Initial Activity Schedule -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline font-bold text-lg text-on-surface">Initial Activity Schedule</h3>
+<button class="text-purple-700 text-sm font-bold flex items-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-sm">add_circle</span> Add Activity
+</button>
+</div>
+<div class="space-y-4">
+<!-- Activity 1 -->
+<div class="bg-white p-6 rounded-xl border border-slate-100 flex flex-col md:flex-row gap-6 items-start hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-lg bg-green-100 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-700 text-3xl">yard</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between">
+<div>
+<h4 class="font-bold text-on-surface">Community Garden Session</h4>
+<p class="text-xs text-slate-500">Therapeutic gardening and social interaction in shared green space.</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 cursor-pointer hover:text-red-500 transition-colors">delete</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Time</label>
+<div class="text-xs font-medium text-on-surface">Wed, 10:00 AM</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Location</label>
+<div class="text-xs font-medium text-purple-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> Greenfield Hub
+</div>
+</div>
+<div class="col-span-2">
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Advisor Notes</label>
+<input class="w-full text-xs bg-transparent border-0 border-b border-slate-200 focus:ring-0 focus:border-purple-700 px-0 pb-1 italic text-slate-500" placeholder="Pair with onboarding volunteer for first session..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity 2 -->
+<div class="bg-white p-6 rounded-xl border border-slate-100 flex flex-col md:flex-row gap-6 items-start hover:shadow-md transition-shadow">
+<div class="w-16 h-16 rounded-lg bg-blue-100 flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-700 text-3xl">menu_book</span>
+</div>
+<div class="flex-1 space-y-4">
+<div class="flex justify-between">
+<div>
+<h4 class="font-bold text-on-surface">Library Reading Circle</h4>
+<p class="text-xs text-slate-500">Guided group reading session for cognitive stimulation and social bonding.</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 cursor-pointer hover:text-red-500 transition-colors">delete</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Time</label>
+<div class="text-xs font-medium text-on-surface">Sat, 02:00 PM</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Location</label>
+<div class="text-xs font-medium text-purple-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> West Park Library
+</div>
+</div>
+<div class="col-span-2">
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Advisor Notes</label>
+<input class="w-full text-xs bg-transparent border-0 border-b border-slate-200 focus:ring-0 focus:border-purple-700 px-0 pb-1 italic text-slate-500" placeholder="Interest in nature & travel books noted..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Section: Clinical Rationale -->
+<section class="mb-8">
+<h3 class="font-headline font-bold text-lg text-on-surface mb-4">Clinical Rationale</h3>
+<div class="relative">
+<textarea class="w-full bg-white rounded-xl border border-slate-200 focus:border-purple-700 focus:ring-4 focus:ring-purple-500/5 p-6 text-sm text-on-surface placeholder:text-slate-400" placeholder="Provide the clinical reasoning for this prescription — include relevant risk assessments, patient history context, and expected therapeutic outcomes..." rows="4"></textarea>
+<div class="absolute bottom-4 right-4 flex items-center gap-2">
+<span class="text-[10px] font-bold text-slate-500 uppercase">Smart Assist</span>
+<div class="w-2 h-2 rounded-full bg-purple-700 animate-pulse"></div>
+</div>
+</div>
+</section>
+
+<div class="h-4"></div>
 </div>
 
 <!-- Footer -->
-<footer class="flex justify-end gap-4 px-8 py-6 bg-white border-t border-slate-100">
+<footer class="px-8 py-5 bg-white border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-[11px] font-semibold uppercase tracking-widest">End-to-End Encrypted Portal</span>
+</div>
+<div class="flex items-center gap-4">
 <button onclick="document.getElementById('newPrescriptionModal').classList.add('hidden')" class="px-6 py-2.5 text-sm font-bold text-slate-500 hover:bg-slate-100 rounded-lg transition-colors">
 Cancel
 </button>
 <button id="assignBtn" onclick="assignPrescription()" class="px-8 py-2.5 bg-gradient-to-br from-purple-700 to-purple-900 text-sm font-bold text-white rounded-lg shadow-lg hover:shadow-purple-500/20 transition-all min-w-[180px] flex items-center justify-center gap-2">
 Assign Prescription
 </button>
+</div>
 </footer>
 </div>
 </div>
